@@ -11,6 +11,9 @@
 		0516DFD128E1BD87004DEA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0516DFD028E1BD87004DEA93 /* Assets.xcassets */; };
 		0516DFD428E1BD87004DEA93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0516DFD328E1BD87004DEA93 /* Preview Assets.xcassets */; };
 		055D862F28E6E76B00D0D76B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D862E28E6E76B00D0D76B /* MainView.swift */; };
+		055D863628E6E8C800D0D76B /* MapPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D863528E6E8C800D0D76B /* MapPage.swift */; };
+		055D863828E6E8EC00D0D76B /* MapPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D863728E6E8EC00D0D76B /* MapPageViewModel.swift */; };
+		055D863A28E6E8F900D0D76B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D863928E6E8F900D0D76B /* MapModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		0516DFD028E1BD87004DEA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0516DFD328E1BD87004DEA93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		055D862E28E6E76B00D0D76B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		055D863528E6E8C800D0D76B /* MapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPage.swift; sourceTree = "<group>"; };
+		055D863728E6E8EC00D0D76B /* MapPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageViewModel.swift; sourceTree = "<group>"; };
+		055D863928E6E8F900D0D76B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				0516DFCC28E1BD83004DEA93 /* BANGUNINApp.swift */,
-				055D862E28E6E76B00D0D76B /* MainView.swift */,
+				055D863028E6E86E00D0D76B /* Features */,
 				0516DFD028E1BD87004DEA93 /* Assets.xcassets */,
 				0516DFD228E1BD87004DEA93 /* Preview Content */,
 			);
@@ -65,6 +71,49 @@
 				0516DFD328E1BD87004DEA93 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		055D863028E6E86E00D0D76B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				055D863128E6E89600D0D76B /* MapView */,
+				055D862E28E6E76B00D0D76B /* MainView.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		055D863128E6E89600D0D76B /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				055D863428E6E8B400D0D76B /* View */,
+				055D863328E6E8AB00D0D76B /* ViewModel */,
+				055D863228E6E8A100D0D76B /* Model */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		055D863228E6E8A100D0D76B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		055D863328E6E8AB00D0D76B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				055D863728E6E8EC00D0D76B /* MapPageViewModel.swift */,
+				055D863928E6E8F900D0D76B /* MapModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		055D863428E6E8B400D0D76B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				055D863528E6E8C800D0D76B /* MapPage.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +186,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055D863828E6E8EC00D0D76B /* MapPageViewModel.swift in Sources */,
+				055D863A28E6E8F900D0D76B /* MapModel.swift in Sources */,
+				055D863628E6E8C800D0D76B /* MapPage.swift in Sources */,
 				055D862F28E6E76B00D0D76B /* MainView.swift in Sources */,
 				0516DFCD28E1BD83004DEA93 /* BANGUNINApp.swift in Sources */,
 			);
