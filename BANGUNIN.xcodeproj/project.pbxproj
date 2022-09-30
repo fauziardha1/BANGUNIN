@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0516DFCD28E1BD83004DEA93 /* BANGUNINApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0516DFCC28E1BD83004DEA93 /* BANGUNINApp.swift */; };
-		0516DFCF28E1BD83004DEA93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0516DFCE28E1BD83004DEA93 /* ContentView.swift */; };
 		0516DFD128E1BD87004DEA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0516DFD028E1BD87004DEA93 /* Assets.xcassets */; };
 		0516DFD428E1BD87004DEA93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0516DFD328E1BD87004DEA93 /* Preview Assets.xcassets */; };
+		055D862F28E6E76B00D0D76B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D862E28E6E76B00D0D76B /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0516DFC928E1BD83004DEA93 /* BANGUNIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BANGUNIN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0516DFCC28E1BD83004DEA93 /* BANGUNINApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BANGUNINApp.swift; sourceTree = "<group>"; };
-		0516DFCE28E1BD83004DEA93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0516DFD028E1BD87004DEA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0516DFD328E1BD87004DEA93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		055D862E28E6E76B00D0D76B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				0516DFCC28E1BD83004DEA93 /* BANGUNINApp.swift */,
-				0516DFCE28E1BD83004DEA93 /* ContentView.swift */,
+				055D862E28E6E76B00D0D76B /* MainView.swift */,
 				0516DFD028E1BD87004DEA93 /* Assets.xcassets */,
 				0516DFD228E1BD87004DEA93 /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0516DFCF28E1BD83004DEA93 /* ContentView.swift in Sources */,
+				055D862F28E6E76B00D0D76B /* MainView.swift in Sources */,
 				0516DFCD28E1BD83004DEA93 /* BANGUNINApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
