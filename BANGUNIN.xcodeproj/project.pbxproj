@@ -99,6 +99,7 @@
 		055D863228E6E8A100D0D76B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				055D863928E6E8F900D0D76B /* MapModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				055D863728E6E8EC00D0D76B /* MapPageViewModel.swift */,
-				055D863928E6E8F900D0D76B /* MapModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

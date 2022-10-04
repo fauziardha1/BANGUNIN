@@ -28,7 +28,7 @@ struct BANGUNINApp: App {
     var body: some Scene {
         WindowGroup {
             TabView(selection: $router.screen) {
-                Home()
+                MapPage()
                     .tag(Screen.homepage)
                     .environmentObject(router)
                     .tabItem {
