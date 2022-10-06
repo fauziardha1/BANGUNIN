@@ -18,7 +18,8 @@ struct ListAlarm: View {
                 NavigationLink(destination: DetailAlarm()) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10.0)
-                            .fill(Color("biru"))
+                            .fill(Color.white)
+                            .border(Color.blue)
                             .frame(height: 100)
                         VStack{
                             HStack{
@@ -26,16 +27,8 @@ struct ListAlarm: View {
                                     .font(.title3)
                                     .padding(.all, 15)
                                 Spacer()
-                            }
-                            HStack(alignment: .bottom){
-                                Text("Tech")
-                                    .padding(.leading, 10)
-                                Spacer()
-//                                Text("22 July 2022")
-                                Text(Date.now, format: .dateTime.day().month().year())
-                                    .padding(.trailing
-                                             , 10)
-                            }
+                                ToggleButton()
+                            }.padding()
                         }
                     }
                     .padding(.trailing, 15)
@@ -44,7 +37,8 @@ struct ListAlarm: View {
                 NavigationLink(destination: DetailAlarm()){
                     ZStack {
                         RoundedRectangle(cornerRadius: 10.0)
-                            .fill(Color("merah"))
+                            .fill(Color.white)
+                            .border(Color.orange)
                             .frame(height: 100)
                         VStack{
                             HStack{
@@ -69,26 +63,9 @@ struct ListAlarm: View {
                 NavigationLink(destination: DetailAlarm()){
                     ZStack {
                         RoundedRectangle(cornerRadius: 10.0)
-                            .fill(Color("hijau"))
+                            .fill(Color.white)
+                            .border(Color.red)
                             .frame(height: 100)
-                        VStack{
-                            VStack{
-                                HStack{
-                                    Text("Implemented Gastalt to create UI")
-                                        .font(.title3)
-                                        .padding(.all, 15)
-                                    Spacer()
-                                }
-                                HStack(alignment: .bottom){
-                                    Text("Design")
-                                        .padding(.leading, 10)
-                                    Spacer()
-                                    Text(Date.now, format: .dateTime.day().month().year())
-                                        .padding(.trailing
-                                                 , 10)
-                                }
-                            }
-                        }
                     }.padding(.trailing, 15)
                         .padding(.leading, 15)
                 }.foregroundColor(.black)
@@ -112,6 +89,21 @@ struct ListAlarm: View {
         }
     }
 }
+
+//struct ToggleButton: View {
+//    @State private var showGreeting = true
+//
+//    var body: some View {
+//        VStack {
+//            Toggle("", isOn: $showGreeting)
+//                .toggleStyle(SwitchToggleStyle(tint: .red))
+//
+//            if showGreeting {
+//                Text("Active")
+//            }
+//        }
+//    }
+//}
 
 struct list: PreviewProvider{
     static var previews: some View{

@@ -11,22 +11,77 @@ import SwiftUI
 struct NavigationBar: View {
     var body: some View{
         NavigationView {
-            Form {
-                Section {
-                    Text("Hello, world!")
+            ScrollView {
+                VStack{
+                    NavigationLink(destination: DetailAlarm()) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10.0)
+                                .fill(Color.white)
+                                .border(Color.blue)
+                                .frame(height: 100)
+                            VStack{
+                                HStack{
+                                    Text("Using UIkit programtically")
+                                        .font(.title3)
+                                        .padding(.all, 15)
+                                    Spacer()
+                                    ToggleButton()
+                                }.padding()
+                            }
+                        }
+                        .padding(.trailing, 15)
+                        .padding(.leading, 15)
+                    }.foregroundColor(.black)
+                    NavigationLink(destination: DetailAlarm()) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10.0)
+                                .fill(Color.white)
+                                .border(Color.blue)
+                                .frame(height: 100)
+                            VStack{
+                                HStack{
+                                    Text("Using UIkit programtically")
+                                        .font(.title3)
+                                        .padding(.all, 15)
+                                    Spacer()
+                                    ToggleButton()
+                                }.padding()
+                            }
+                        }
+                        .padding(.trailing, 15)
+                        .padding(.leading, 15)
+                    }.foregroundColor(.black)
+                    NavigationLink(destination: DetailAlarm()) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10.0)
+                                .fill(Color.white)
+                                .border(Color.blue)
+                                .frame(height: 100)
+                            VStack{
+                                HStack{
+                                    Text("Stasiun Kebayoran")
+                                        .font(.title3)
+    //                                    .padding(.all, 15)
+    //                                Spacer()
+                                    ToggleButton()
+                                }.padding()
+                            }
+                        }
+                        .padding(.trailing, 15)
+                        .padding(.leading, 15)
+                    }.foregroundColor(.black)
+                    Spacer()
                 }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                .toolbar {
+                    ToolbarItem {
+                        Button(action: addItem) {
+                            Label("Add Item", systemImage: "plus")
+                                .foregroundColor(Color.orange)
+                        }
                     }
                 }
-            }
             .navigationTitle("Alarm")
+            }
 //            .navigationBarTitleDisplayMode(.inline)
 //            .navigationBarHidden(true)
         }
@@ -36,6 +91,21 @@ struct NavigationBar: View {
     }
 }
 
+
+struct ToggleButton: View {
+    @State private var showGreeting = false
+
+    var body: some View {
+        VStack {
+            Toggle("", isOn: $showGreeting)
+                .toggleStyle(SwitchToggleStyle(tint: .orange))
+
+            if showGreeting {
+                Text("Active")
+            }
+        }
+    }
+}
 
 
 struct nav: PreviewProvider {
