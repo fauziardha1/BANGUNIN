@@ -39,6 +39,8 @@ extension MapPage {
                     longitudeDelta: 0.05
                  )
               )
+            
+            locations.append(Location(name: "current", latitude: lat, longitude: long))
         }
     }
 }

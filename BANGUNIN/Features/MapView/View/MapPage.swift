@@ -24,6 +24,19 @@ struct MapPage: View {
                     Map(coordinateRegion: $vm.mapRegion, annotationItems: vm.locations){
                         location in
                         
+                        location.name == "current"
+                        ? MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)) {
+                            
+                            NavigationLink{
+                                Text(location.name)
+                            } label :{
+                                Circle()
+                                    .stroke(.orange, lineWidth: 8)
+                                    .frame(width: 16, height: 16)
+                            }
+                    
+                        }
+                        :
                         MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)) {
                             
                             NavigationLink{
