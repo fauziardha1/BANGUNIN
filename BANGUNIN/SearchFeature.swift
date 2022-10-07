@@ -24,7 +24,7 @@ struct SearchBar: View {
                 }
             }
             .searchable(text: $searchText)
-            .navigationTitle("Contacts")
+            .navigationTitle("Alarm")
         }
     }
 
