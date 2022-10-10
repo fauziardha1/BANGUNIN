@@ -25,5 +25,22 @@ extension MapPage {
                 longitudeDelta: 0.05
              )
         )
+        
+        // Function update location
+        // it recieve input latitude and longitude,
+        // if success, it will update the mapregion center location, otherwise it will error and do nothing
+        func updateLocation(_ lat : Double, _ long : Double){
+            mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(
+                latitude: lat,
+                longitude: long
+                ),
+                 span: MKCoordinateSpan(
+                    latitudeDelta: 0.05,
+                    longitudeDelta: 0.05
+                 )
+              )
+            
+            locations.append(Location(name: "current", latitude: lat, longitude: long))
+        }
     }
 }
