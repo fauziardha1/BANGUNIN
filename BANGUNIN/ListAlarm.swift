@@ -10,8 +10,7 @@ import SwiftUI
 
 struct AlarmList: View {
     
-    var places = ["Stasiun Rawamangun","Stasiun Rawabuntu","Stasiun Kebayoran"]
-    
+    var places = ["Stasiun Rawamangun","Stasiun Rawabuntu","Stasiun Kebayoran","Halte Bus Trasn Jakarta"]
     
     var body: some View{
         NavigationView {
