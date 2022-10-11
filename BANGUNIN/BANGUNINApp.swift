@@ -34,7 +34,7 @@ struct BANGUNINApp: App {
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }
-                ListPage()
+                AlarmList()
                     .tag(Screen.listpage)
                     .environmentObject(router)
                     .tabItem {
