@@ -17,6 +17,9 @@
 		055D863828E6E8EC00D0D76B /* MapPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D863728E6E8EC00D0D76B /* MapPageViewModel.swift */; };
 		055D863A28E6E8F900D0D76B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D863928E6E8F900D0D76B /* MapModel.swift */; };
 		2998CB0028EA537D00A01B04 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998CAFF28EA537D00A01B04 /* Home.swift */; };
+		BE6C52EB2905461900908476 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE6C52E92905461900908476 /* Model.xcdatamodeld */; };
+		BE6C52ED290548A900908476 /* persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C52EC290548A900908476 /* persistence.swift */; };
+		BE6C52EF29054CE000908476 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C52EE29054CE000908476 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		055D863728E6E8EC00D0D76B /* MapPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageViewModel.swift; sourceTree = "<group>"; };
 		055D863928E6E8F900D0D76B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		2998CAFF28EA537D00A01B04 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		BE6C52EA2905461900908476 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BE6C52EC290548A900908476 /* persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = persistence.swift; sourceTree = "<group>"; };
+		BE6C52EE29054CE000908476 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,7 @@
 				055D863028E6E86E00D0D76B /* Features */,
 				0516DFD028E1BD87004DEA93 /* Assets.xcassets */,
 				0516DFD228E1BD87004DEA93 /* Preview Content */,
+				BE6C52E92905461900908476 /* Model.xcdatamodeld */,
 			);
 			path = BANGUNIN;
 			sourceTree = "<group>";
@@ -101,6 +108,8 @@
 				05418C7B28F8087100CE1BBB /* ListAlarmPage */,
 				055D863128E6E89600D0D76B /* MapView */,
 				055D862E28E6E76B00D0D76B /* MainView.swift */,
+				BE6C52EE29054CE000908476 /* DataModel.swift */,
+				BE6C52EC290548A900908476 /* persistence.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -213,12 +222,15 @@
 			files = (
 				055D863828E6E8EC00D0D76B /* MapPageViewModel.swift in Sources */,
 				05418C7E28F8087100CE1BBB /* ListPage.swift in Sources */,
+				BE6C52EF29054CE000908476 /* DataModel.swift in Sources */,
 				055D863A28E6E8F900D0D76B /* MapModel.swift in Sources */,
 				055D863628E6E8C800D0D76B /* MapPage.swift in Sources */,
 				055D862F28E6E76B00D0D76B /* MainView.swift in Sources */,
+				BE6C52EB2905461900908476 /* Model.xcdatamodeld in Sources */,
 				0516DFCD28E1BD83004DEA93 /* BANGUNINApp.swift in Sources */,
 				2998CB0028EA537D00A01B04 /* Home.swift in Sources */,
 				05418C8028F8088600CE1BBB /* LocationManager.swift in Sources */,
+				BE6C52ED290548A900908476 /* persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +431,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BE6C52E92905461900908476 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BE6C52EA2905461900908476 /* Model.xcdatamodel */,
+			);
+			currentVersion = BE6C52EA2905461900908476 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0516DFC128E1BD83004DEA93 /* Project object */;
 }
