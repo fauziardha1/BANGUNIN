@@ -11,6 +11,7 @@ import SwiftUI
 struct AlarmList: View {
     
     var places = ["Stasiun Rawamangun","Stasiun Rawabuntu","Stasiun Kebayoran","Halte Bus Trasn Jakarta"]
+    @State private var isFormShows = false
     
     var body: some View{
         NavigationView {
@@ -27,6 +28,9 @@ struct AlarmList: View {
                             Label("Add Item", systemImage: "plus")
                                 .foregroundColor(Color.orange)
                         }
+                        .sheet(isPresented: $isFormShows) {
+                            FormAlarm()
+                        }
                     }
                 }
                 .navigationTitle("Alarm")
@@ -34,7 +38,7 @@ struct AlarmList: View {
         }
     }
     private func addItem() {
-        print("halo")
+        isFormShows.toggle()
     }
 }
 
