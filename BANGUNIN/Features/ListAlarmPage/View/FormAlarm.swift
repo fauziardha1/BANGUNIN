@@ -28,7 +28,7 @@ enum Repeat: String, CaseIterable,Identifiable {
     var id: Self {self}
 }
 
-struct EditView: View {
+struct FormAlarm: View {
     @State var alarmname: String = ""
     @State var radiusColor: Radius = .Orange
     @State var alert: AlertSound = .Radar
@@ -96,8 +96,8 @@ struct EditView: View {
 }
 
 
-struct editview: PreviewProvider {
+struct formAlarm: PreviewProvider {
     static var previews: some View {
-        EditView()
+        FormAlarm()
     }
 }
