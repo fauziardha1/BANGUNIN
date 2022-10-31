@@ -11,30 +11,28 @@ import Foundation
 import SwiftUI
 
 struct SearchBar: View {
-    let names = ["zev", "puji", "radya", "arip"]
     @State private var searchText = ""
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(searchResults, id: \.self) { name in
-                    NavigationLink(destination: AlarmList()) {
-                        Text(name)
-                    }
+        VStack {
+            HStack(alignment: .top) {
+                    Image(systemName: "magnifyingglass")
+                        .frame(width: 20, height: 19)
+                        .padding(.horizontal)
+                        
+                    TextField("Search here", text: $searchText)
+                        
                 }
-            }
-            .searchable(text: $searchText)
-            .navigationTitle("Alarm")
+                .frame(height: 57)
+                .background(.white)
+                .cornerRadius(32)
+                .padding(.horizontal)
+            
+            Spacer()
         }
+            
     }
 
-    var searchResults: [String] {
-        if searchText.isEmpty {
-            return names
-        } else {
-            return names.filter { $0.contains(searchText) }
-        }
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
