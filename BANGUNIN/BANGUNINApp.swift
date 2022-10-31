@@ -25,6 +25,8 @@ struct BANGUNINApp: App {
     
     @StateObject var router = TabRouter()
     
+    @StateObject private var dataController = DataController()
+    
     var body: some Scene {
         WindowGroup {
             TabView(selection: $router.screen) {
@@ -40,6 +42,7 @@ struct BANGUNINApp: App {
                     .tabItem {
                         Label("List", systemImage: "bookmark")
                     }
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
             }.accentColor(.orange)
         }
     }
