@@ -17,6 +17,7 @@
 		055D863828E6E8EC00D0D76B /* MapPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D863728E6E8EC00D0D76B /* MapPageViewModel.swift */; };
 		055D863A28E6E8F900D0D76B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D863928E6E8F900D0D76B /* MapModel.swift */; };
 		2998CB0028EA537D00A01B04 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998CAFF28EA537D00A01B04 /* Home.swift */; };
+		BE5F1D8929101F5F00AF91EC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F1D8829101F5F00AF91EC /* DataManager.swift */; };
 		BE6C52EB2905461900908476 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE6C52E92905461900908476 /* Model.xcdatamodeld */; };
 		BE6C52ED290548A900908476 /* persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C52EC290548A900908476 /* persistence.swift */; };
 		BE6C52EF29054CE000908476 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C52EE29054CE000908476 /* DataModel.swift */; };
@@ -34,6 +35,7 @@
 		055D863728E6E8EC00D0D76B /* MapPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageViewModel.swift; sourceTree = "<group>"; };
 		055D863928E6E8F900D0D76B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		2998CAFF28EA537D00A01B04 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		BE5F1D8829101F5F00AF91EC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BE6C52EA2905461900908476 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		BE6C52EC290548A900908476 /* persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = persistence.swift; sourceTree = "<group>"; };
 		BE6C52EE29054CE000908476 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		0516DFCB28E1BD83004DEA93 /* BANGUNIN */ = {
 			isa = PBXGroup;
 			children = (
+				BE5F1D8729101F4100AF91EC /* DataManager */,
 				0516DFCC28E1BD83004DEA93 /* BANGUNINApp.swift */,
 				055D863028E6E86E00D0D76B /* Features */,
 				0516DFD028E1BD87004DEA93 /* Assets.xcassets */,
@@ -150,6 +153,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BE5F1D8729101F4100AF91EC /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				BE5F1D8829101F5F00AF91EC /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				055D863828E6E8EC00D0D76B /* MapPageViewModel.swift in Sources */,
+				BE5F1D8929101F5F00AF91EC /* DataManager.swift in Sources */,
 				05418C7E28F8087100CE1BBB /* ListPage.swift in Sources */,
 				BE6C52EF29054CE000908476 /* DataModel.swift in Sources */,
 				055D863A28E6E8F900D0D76B /* MapModel.swift in Sources */,
