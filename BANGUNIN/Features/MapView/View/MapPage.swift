@@ -53,6 +53,9 @@ struct MapPage: View {
                 }
             }
             
+            // search bar
+            SearchBar()
+            
             // button current location
             VStack {
                 Spacer()
