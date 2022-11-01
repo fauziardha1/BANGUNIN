@@ -19,46 +19,46 @@ class CoreDataManager {
             }
         }
     }
+    
+            func updateAlarm() {
+    
+                do {
+                    try persistentContainer.viewContext.save()
+                } catch {
+                    persistentContainer.viewContext.rollback()
+                }
+    
+            }
     //
-    //        func updateALAe() {
+            func deleteAlarm(alarm: Alarm) {
+    
+                persistentContainer.viewContext.delete(alarm)
+    
+                do {
+                    try persistentContainer.viewContext.save()
+                } catch {
+                    persistentContainer.viewContext.rollback()
+                    print("Failed to save context \(error)")
+                }
+    
+            }
+    
+            func getAllAlarms() -> [Alarm] {
+    
+                let fetchRequest: NSFetchRequest<Alarm> = Alarm.fetchRequest()
+    
+                do {
+                    return try persistentContainer.viewContext.fetch(fetchRequest)
+                } catch {
+                    return []
+                }
+    
+            }
     //
-    //            do {
-    //                try persistentContainer.viewContext.save()
-    //            } catch {
-    //                persistentContainer.viewContext.rollback()
-    //            }
-    //
-    //        }
-    //
-    //        func deleteMovie(movie: Alarm) {
-    //
-    //            persistentContainer.viewContext.delete(movie)
-    //
-    //            do {
-    //                try persistentContainer.viewContext.save()
-    //            } catch {
-    //                persistentContainer.viewContext.rollback()
-    //                print("Failed to save context \(error)")
-    //            }
-    //
-    //        }
-    //
-    //        func getAllMovies() -> [Movie] {
-    //
-    //            let fetchRequest: NSFetchRequest<Movie> = Movie.fetchRequest()
-    //
-    //            do {
-    //                return try persistentContainer.viewContext.fetch(fetchRequest)
-    //            } catch {
-    //                return []
-    //            }
-    //
-    //        }
-    //
-    func saveMovie(name: String) {
+    func saveAlarm(name: String) {
         
-        let movie = Alarm(context: persistentContainer.viewContext)
-        movie.name = name
+        let alarm = Alarm(context: persistentContainer.viewContext)
+        alarm.name = name
         
         do {
             try persistentContainer.viewContext.save()
@@ -69,3 +69,4 @@ class CoreDataManager {
     }
     
 }
+
