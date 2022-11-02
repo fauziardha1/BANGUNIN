@@ -11,14 +11,29 @@
 		0516DFD128E1BD87004DEA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0516DFD028E1BD87004DEA93 /* Assets.xcassets */; };
 		0516DFD428E1BD87004DEA93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0516DFD328E1BD87004DEA93 /* Preview Assets.xcassets */; };
 		05418C7E28F8087100CE1BBB /* ListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05418C7D28F8087100CE1BBB /* ListPage.swift */; };
-		05418C8028F8088600CE1BBB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05418C7F28F8088600CE1BBB /* LocationManager.swift */; };
 		055D862F28E6E76B00D0D76B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D862E28E6E76B00D0D76B /* MainView.swift */; };
 		055D863628E6E8C800D0D76B /* MapPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D863528E6E8C800D0D76B /* MapPage.swift */; };
 		055D863828E6E8EC00D0D76B /* MapPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D863728E6E8EC00D0D76B /* MapPageViewModel.swift */; };
 		055D863A28E6E8F900D0D76B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D863928E6E8F900D0D76B /* MapModel.swift */; };
+		291885D5291256E8001CA3D0 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885D4291256E8001CA3D0 /* AlarmView.swift */; };
+		291885D7291256FA001CA3D0 /* AlarmAddRepeatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885D6291256FA001CA3D0 /* AlarmAddRepeatCellView.swift */; };
+		291885D92912570C001CA3D0 /* AlarmAddLabelCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885D82912570C001CA3D0 /* AlarmAddLabelCellView.swift */; };
+		291885DB2912571F001CA3D0 /* AlarmAddSnoozeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885DA2912571F001CA3D0 /* AlarmAddSnoozeCellView.swift */; };
+		291885DD2912572D001CA3D0 /* AlarmRepearCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885DC2912572D001CA3D0 /* AlarmRepearCellView.swift */; };
+		291885E0291257D1001CA3D0 /* AlarmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885DF291257D1001CA3D0 /* AlarmData.swift */; };
+		291885E229125823001CA3D0 /* UserDefaultAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885E129125823001CA3D0 /* UserDefaultAlarm.swift */; };
+		291885E429125948001CA3D0 /* AlarmListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885E329125948001CA3D0 /* AlarmListView.swift */; };
+		291885E62912595D001CA3D0 /* AlarmAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885E52912595D001CA3D0 /* AlarmAddView.swift */; };
+		291885E829125969001CA3D0 /* AlarmRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885E729125969001CA3D0 /* AlarmRepeatView.swift */; };
+		291885EA2912597E001CA3D0 /* AlarmLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885E92912597E001CA3D0 /* AlarmLabelView.swift */; };
+		291885ED291259F0001CA3D0 /* Array+RepeatDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885EC291259F0001CA3D0 /* Array+RepeatDay.swift */; };
+		291885EF29125B4B001CA3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885EE29125B4B001CA3D0 /* AppDelegate.swift */; };
+		291885F129125B6A001CA3D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885F029125B6A001CA3D0 /* SceneDelegate.swift */; };
+		291885F829125DC0001CA3D0 /* BANGUNINTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291885F729125DC0001CA3D0 /* BANGUNINTests.swift */; };
+		297324B82912031900C9BCBF /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297324B72912031900C9BCBF /* AlarmModel.swift */; };
+		297324BA291204C100C9BCBF /* RepeatDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297324B9291204C100C9BCBF /* RepeatDay.swift */; };
 		2998CB0028EA537D00A01B04 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998CAFF28EA537D00A01B04 /* Home.swift */; };
 		BE4C44AB28F7DC45001AF7A7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4C44AA28F7DC45001AF7A7 /* LocationManager.swift */; };
-		BEB5DF3D28F53B6F00C39331 /* ListAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5DF3B28EEBFEB00C39331 /* ListAlarm.swift */; };
 		BEB5DF3E28F53B7100C39331 /* SearchFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5DF3928EEBF7900C39331 /* SearchFeature.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,15 +43,30 @@
 		0516DFD028E1BD87004DEA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0516DFD328E1BD87004DEA93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		05418C7D28F8087100CE1BBB /* ListPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPage.swift; sourceTree = "<group>"; };
-		05418C7F28F8088600CE1BBB /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		055D862E28E6E76B00D0D76B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		055D863528E6E8C800D0D76B /* MapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPage.swift; sourceTree = "<group>"; };
 		055D863728E6E8EC00D0D76B /* MapPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageViewModel.swift; sourceTree = "<group>"; };
 		055D863928E6E8F900D0D76B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		291885D4291256E8001CA3D0 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
+		291885D6291256FA001CA3D0 /* AlarmAddRepeatCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmAddRepeatCellView.swift; sourceTree = "<group>"; };
+		291885D82912570C001CA3D0 /* AlarmAddLabelCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmAddLabelCellView.swift; sourceTree = "<group>"; };
+		291885DA2912571F001CA3D0 /* AlarmAddSnoozeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmAddSnoozeCellView.swift; sourceTree = "<group>"; };
+		291885DC2912572D001CA3D0 /* AlarmRepearCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmRepearCellView.swift; sourceTree = "<group>"; };
+		291885DF291257D1001CA3D0 /* AlarmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmData.swift; sourceTree = "<group>"; };
+		291885E129125823001CA3D0 /* UserDefaultAlarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultAlarm.swift; sourceTree = "<group>"; };
+		291885E329125948001CA3D0 /* AlarmListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListView.swift; sourceTree = "<group>"; };
+		291885E52912595D001CA3D0 /* AlarmAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmAddView.swift; sourceTree = "<group>"; };
+		291885E729125969001CA3D0 /* AlarmRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmRepeatView.swift; sourceTree = "<group>"; };
+		291885E92912597E001CA3D0 /* AlarmLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmLabelView.swift; sourceTree = "<group>"; };
+		291885EC291259F0001CA3D0 /* Array+RepeatDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RepeatDay.swift"; sourceTree = "<group>"; };
+		291885EE29125B4B001CA3D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		291885F029125B6A001CA3D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		291885F729125DC0001CA3D0 /* BANGUNINTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BANGUNINTests.swift; sourceTree = "<group>"; };
+		297324B72912031900C9BCBF /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
+		297324B9291204C100C9BCBF /* RepeatDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatDay.swift; sourceTree = "<group>"; };
 		2998CAFF28EA537D00A01B04 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		BE4C44AA28F7DC45001AF7A7 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BEB5DF3928EEBF7900C39331 /* SearchFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFeature.swift; sourceTree = "<group>"; };
-		BEB5DF3B28EEBFEB00C39331 /* ListAlarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAlarm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				0516DFCB28E1BD83004DEA93 /* BANGUNIN */,
+				291885F229125BB5001CA3D0 /* BANGUNINTests */,
 				0516DFCA28E1BD83004DEA93 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +103,8 @@
 				0516DFCC28E1BD83004DEA93 /* BANGUNINApp.swift */,
 				055D863028E6E86E00D0D76B /* Features */,
 				0516DFD028E1BD87004DEA93 /* Assets.xcassets */,
+				291885EE29125B4B001CA3D0 /* AppDelegate.swift */,
+				291885F029125B6A001CA3D0 /* SceneDelegate.swift */,
 				0516DFD228E1BD87004DEA93 /* Preview Content */,
 			);
 			path = BANGUNIN;
@@ -88,7 +121,10 @@
 		05418C7B28F8087100CE1BBB /* ListAlarmPage */ = {
 			isa = PBXGroup;
 			children = (
+				291885DE291257C4001CA3D0 /* Data */,
+				291885D129125666001CA3D0 /* Model */,
 				05418C7C28F8087100CE1BBB /* View */,
+				291885D229125692001CA3D0 /* View Model */,
 			);
 			path = ListAlarmPage;
 			sourceTree = "<group>";
@@ -96,7 +132,12 @@
 		05418C7C28F8087100CE1BBB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				291885D3291256D0001CA3D0 /* Components */,
 				05418C7D28F8087100CE1BBB /* ListPage.swift */,
+				291885E329125948001CA3D0 /* AlarmListView.swift */,
+				291885E52912595D001CA3D0 /* AlarmAddView.swift */,
+				291885E729125969001CA3D0 /* AlarmRepeatView.swift */,
+				291885E92912597E001CA3D0 /* AlarmLabelView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -104,9 +145,10 @@
 		055D863028E6E86E00D0D76B /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				055D862E28E6E76B00D0D76B /* MainView.swift */,
+				291885EB291259DF001CA3D0 /* Utils */,
 				05418C7B28F8087100CE1BBB /* ListAlarmPage */,
 				055D863128E6E89600D0D76B /* MapView */,
-				055D862E28E6E76B00D0D76B /* MainView.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -114,9 +156,9 @@
 		055D863128E6E89600D0D76B /* MapView */ = {
 			isa = PBXGroup;
 			children = (
+				055D863228E6E8A100D0D76B /* Model */,
 				055D863428E6E8B400D0D76B /* View */,
 				055D863328E6E8AB00D0D76B /* ViewModel */,
-				055D863228E6E8A100D0D76B /* Model */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -143,10 +185,62 @@
 			children = (
 				055D863528E6E8C800D0D76B /* MapPage.swift */,
 				2998CAFF28EA537D00A01B04 /* Home.swift */,
-				BEB5DF3B28EEBFEB00C39331 /* ListAlarm.swift */,
 				BEB5DF3928EEBF7900C39331 /* SearchFeature.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		291885D129125666001CA3D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				297324B72912031900C9BCBF /* AlarmModel.swift */,
+				297324B9291204C100C9BCBF /* RepeatDay.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		291885D229125692001CA3D0 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		291885D3291256D0001CA3D0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				291885D4291256E8001CA3D0 /* AlarmView.swift */,
+				291885D6291256FA001CA3D0 /* AlarmAddRepeatCellView.swift */,
+				291885D82912570C001CA3D0 /* AlarmAddLabelCellView.swift */,
+				291885DA2912571F001CA3D0 /* AlarmAddSnoozeCellView.swift */,
+				291885DC2912572D001CA3D0 /* AlarmRepearCellView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		291885DE291257C4001CA3D0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				291885DF291257D1001CA3D0 /* AlarmData.swift */,
+				291885E129125823001CA3D0 /* UserDefaultAlarm.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		291885EB291259DF001CA3D0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				291885EC291259F0001CA3D0 /* Array+RepeatDay.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		291885F229125BB5001CA3D0 /* BANGUNINTests */ = {
+			isa = PBXGroup;
+			children = (
+				291885F729125DC0001CA3D0 /* BANGUNINTests.swift */,
+			);
+			path = BANGUNINTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,16 +313,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				291885EF29125B4B001CA3D0 /* AppDelegate.swift in Sources */,
 				055D863828E6E8EC00D0D76B /* MapPageViewModel.swift in Sources */,
+				297324BA291204C100C9BCBF /* RepeatDay.swift in Sources */,
 				BEB5DF3E28F53B7100C39331 /* SearchFeature.swift in Sources */,
+				291885D7291256FA001CA3D0 /* AlarmAddRepeatCellView.swift in Sources */,
+				291885E829125969001CA3D0 /* AlarmRepeatView.swift in Sources */,
 				05418C7E28F8087100CE1BBB /* ListPage.swift in Sources */,
+				291885E429125948001CA3D0 /* AlarmListView.swift in Sources */,
+				291885ED291259F0001CA3D0 /* Array+RepeatDay.swift in Sources */,
 				055D863A28E6E8F900D0D76B /* MapModel.swift in Sources */,
-				BEB5DF3D28F53B6F00C39331 /* ListAlarm.swift in Sources */,
 				055D863628E6E8C800D0D76B /* MapPage.swift in Sources */,
+				291885D92912570C001CA3D0 /* AlarmAddLabelCellView.swift in Sources */,
+				297324B82912031900C9BCBF /* AlarmModel.swift in Sources */,
 				055D862F28E6E76B00D0D76B /* MainView.swift in Sources */,
 				0516DFCD28E1BD83004DEA93 /* BANGUNINApp.swift in Sources */,
+				291885F129125B6A001CA3D0 /* SceneDelegate.swift in Sources */,
+				291885DD2912572D001CA3D0 /* AlarmRepearCellView.swift in Sources */,
 				2998CB0028EA537D00A01B04 /* Home.swift in Sources */,
+				291885E62912595D001CA3D0 /* AlarmAddView.swift in Sources */,
+				291885D5291256E8001CA3D0 /* AlarmView.swift in Sources */,
+				291885DB2912571F001CA3D0 /* AlarmAddSnoozeCellView.swift in Sources */,
+				291885F829125DC0001CA3D0 /* BANGUNINTests.swift in Sources */,
 				BE4C44AB28F7DC45001AF7A7 /* LocationManager.swift in Sources */,
+				291885E229125823001CA3D0 /* UserDefaultAlarm.swift in Sources */,
+				291885E0291257D1001CA3D0 /* AlarmData.swift in Sources */,
+				291885EA2912597E001CA3D0 /* AlarmLabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

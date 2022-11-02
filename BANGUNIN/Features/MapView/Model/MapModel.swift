@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct Location : Identifiable{
     var id : UUID = UUID()
     var name : String

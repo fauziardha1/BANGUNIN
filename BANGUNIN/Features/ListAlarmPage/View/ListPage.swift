@@ -10,12 +10,14 @@ import SwiftUI
 struct ListPage: View {
     
     @EnvironmentObject var router: TabRouter
+
     
     var body: some View {
         ZStack {
             Text("List Page")
                 .bold()
                 .foregroundColor(.white)
+                
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.mint
@@ -23,6 +25,8 @@ struct ListPage: View {
         .clipped()
     }
 }
+
+
 
 struct ListPage_Previews: PreviewProvider {
     static var previews: some View {
