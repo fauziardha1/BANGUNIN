@@ -17,6 +17,8 @@
 		055D863828E6E8EC00D0D76B /* MapPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D863728E6E8EC00D0D76B /* MapPageViewModel.swift */; };
 		055D863A28E6E8F900D0D76B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D863928E6E8F900D0D76B /* MapModel.swift */; };
 		2998CB0028EA537D00A01B04 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998CAFF28EA537D00A01B04 /* Home.swift */; };
+		BE5F1D8D29129A3500AF91EC /* datamodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F1D8C29129A3500AF91EC /* datamodel.swift */; };
+		BE5F1D9029129AE200AF91EC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE5F1D8E29129AE100AF91EC /* Model.xcdatamodeld */; };
 		BE6F6F4828FD0E8A00491AEF /* EditAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6F6F4728FD0E8A00491AEF /* EditAlarmView.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		055D863728E6E8EC00D0D76B /* MapPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageViewModel.swift; sourceTree = "<group>"; };
 		055D863928E6E8F900D0D76B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		2998CAFF28EA537D00A01B04 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		BE5F1D8C29129A3500AF91EC /* datamodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datamodel.swift; sourceTree = "<group>"; };
+		BE5F1D8F29129AE200AF91EC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		BE6F6F4728FD0E8A00491AEF /* EditAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlarmView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +53,7 @@
 		0516DFC028E1BD83004DEA93 = {
 			isa = PBXGroup;
 			children = (
+				BE5F1D8E29129AE100AF91EC /* Model.xcdatamodeld */,
 				0516DFCB28E1BD83004DEA93 /* BANGUNIN */,
 				0516DFCA28E1BD83004DEA93 /* Products */,
 			);
@@ -69,6 +74,7 @@
 				055D863028E6E86E00D0D76B /* Features */,
 				0516DFD028E1BD87004DEA93 /* Assets.xcassets */,
 				0516DFD228E1BD87004DEA93 /* Preview Content */,
+				BE5F1D8C29129A3500AF91EC /* datamodel.swift */,
 			);
 			path = BANGUNIN;
 			sourceTree = "<group>";
@@ -217,11 +223,13 @@
 				055D863828E6E8EC00D0D76B /* MapPageViewModel.swift in Sources */,
 				05418C7E28F8087100CE1BBB /* ListPage.swift in Sources */,
 				055D863A28E6E8F900D0D76B /* MapModel.swift in Sources */,
+				BE5F1D8D29129A3500AF91EC /* datamodel.swift in Sources */,
 				055D863628E6E8C800D0D76B /* MapPage.swift in Sources */,
 				055D862F28E6E76B00D0D76B /* MainView.swift in Sources */,
 				0516DFCD28E1BD83004DEA93 /* BANGUNINApp.swift in Sources */,
 				BE6F6F4828FD0E8A00491AEF /* EditAlarmView.swift in Sources */,
 				2998CB0028EA537D00A01B04 /* Home.swift in Sources */,
+				BE5F1D9029129AE200AF91EC /* Model.xcdatamodeld in Sources */,
 				05418C8028F8088600CE1BBB /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +431,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BE5F1D8E29129AE100AF91EC /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BE5F1D8F29129AE200AF91EC /* Model.xcdatamodel */,
+			);
+			currentVersion = BE5F1D8F29129AE200AF91EC /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0516DFC128E1BD83004DEA93 /* Project object */;
 }
