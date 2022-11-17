@@ -18,8 +18,7 @@ struct ListPage: View {
                 .foregroundColor(.white)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.mint
-        )
+        .background(.mint)
         .clipped()
     }
 }
