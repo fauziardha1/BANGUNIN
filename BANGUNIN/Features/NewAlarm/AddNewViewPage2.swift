@@ -1,17 +1,18 @@
 //
-//  AddNewView3.0.swift
+//  AddNewViewPage2.swift
 //  BANGUNIN
 //
-//  Created by Arief Ramadhan on 17/11/22.
+//  Created by Zevira varies martan on 17/11/22.
 //
 
 import SwiftUI
 
-struct AddNewView: View {
-    @State var num = 1
+struct AddNewViewPage2: View {
+    
+    @State var num = 2
     @State private var alarmName: String = ""
     
-    let radius: [String] = ["300", "500", "700", "900"]
+    let radius: [String] = ["Blue", "Green", "Orange", "Red", "Purple", "Pink"]
     
     @State var pick: String = ""
     
@@ -20,17 +21,7 @@ struct AddNewView: View {
             VStack(alignment: .center, spacing: 20) {
                 
                 VStack(alignment: .leading) {
-                    Text("Pinpoint (\(num)/2)")
-                        .font(.callout)
-                        .bold()
-                    
-                    Image("stasiun_gambir")
-                        .resizable()
-                        .frame(width: 350, height: 200)
-                }
-                
-                VStack(alignment: .leading) {
-                    Text("Radius (in meter)")
+                    Text("Alarm Color (\(num)/2)")
                         .font(.callout)
                         .bold()
                     
@@ -59,7 +50,7 @@ struct AddNewView: View {
                 }
                 
                 VStack(alignment: .leading) {
-                    Text("Alarm name")
+                    Text("Alert Sound")
                         .font(.callout)
                         .bold()
                     TextField("Name the alarm", text: $alarmName)
@@ -69,6 +60,17 @@ struct AddNewView: View {
                         .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.gray))
                 }
             
+                VStack(alignment: .leading) {
+                    Text("Repeat")
+                        .font(.callout)
+                        .bold()
+                    TextField("Name the alarm", text: $alarmName)
+                        .padding(20)
+                        .frame(maxHeight: 50)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.gray))
+                }
+
                 Spacer()
                 
                 NavigationLink(destination: AddNewViewPage2()) {
@@ -95,10 +97,11 @@ struct AddNewView: View {
         }
         
     }
+
 }
 
-struct AddNewView3_0_Previews: PreviewProvider {
+struct AddNewViewPage2_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewView()
+        AddNewViewPage2()
     }
 }
