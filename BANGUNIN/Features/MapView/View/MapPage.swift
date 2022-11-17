@@ -16,6 +16,8 @@ struct MapPage: View {
     
     
     
+    
+    
     var body: some View {
         ZStack {
             // map view
@@ -77,6 +79,66 @@ struct MapPage: View {
                 }
                 .padding(.bottom, 16)
                 .padding(.trailing, 16)
+                
+            
+            }
+            
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button {
+                        let current = Date().timeIntervalSince1970 * 1000
+
+                        let interval = 10 * 1000
+
+                        var update = current
+                        while true {
+                            print("hello \(current) : \(update)")
+
+                            if update >= current + Double(interval) {
+                                
+                                for _  in 0...10{
+                                    SoundManager.instance.play()
+                                    sleep(1)
+                                }
+
+                                print("bunyiii")
+                                break
+                            }
+                            
+                            
+                            if update >= current + Double(interval){
+                                break
+                            }
+                            
+
+                            sleep(1)
+                            update = Date().timeIntervalSince1970 * 1000
+                            
+                            
+                            
+                            
+                        }
+                        
+//                        SoundManager.instance.play()
+                        
+                        
+                    }
+                    label : {
+                        Image(systemName: "alarm.fill")
+                            .resizable()
+                            .frame(width: 32,height: 32 )
+                            .foregroundColor(.blue)
+                    }
+                    .padding()
+                    .background(.white)
+                    .cornerRadius(100)
+                    
+                }
+                .padding(.bottom, 100)
+                .padding(.trailing, 100)
+                
                 
             
             }
