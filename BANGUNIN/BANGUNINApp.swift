@@ -10,6 +10,7 @@ import SwiftUI
 enum Screen {
     case homepage
     case listpage
+    case addAlarmPage
 }
 
 final class TabRouter: ObservableObject {
