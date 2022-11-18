@@ -8,11 +8,34 @@
 import SwiftUI
 
 struct AddNewView: View {
+    @State var condition = false
+    
     var body: some View {
-        VStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        }.frame(maxWidth: 300, maxHeight: 300)
-            .background(.mint)
+        GeometryReader { geometry in
+            VStack {
+                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.mint)
+            Button(action: {}){
+                ZStack {
+                    Circle()
+                        .foregroundColor(Color("close-in"))
+                        .frame(width: geometry.size.width/8, height: geometry.size.width/8)
+                        .shadow(radius: 4)
+                    
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: geometry.size.width/8 , height: geometry.size.width/8)
+                        .foregroundColor(Color("close-out"))
+                }
+                .offset(y: -geometry.size.height/18/3)
+                .rotationEffect(Angle(degrees: 45))
+                .onTapGesture{
+                    condition = true
+                }
+            }
+        }.navigate(to: customTabBar(router: TabRouter()), when: $condition)
     }
 }
 

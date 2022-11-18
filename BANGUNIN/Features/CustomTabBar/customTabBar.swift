@@ -23,10 +23,10 @@ struct customTabBar: View {
                 case .addAlarmPage:
                     AddNewView()
                 }
-//                Spacer()
+                
                 HStack {
                     TabBarIcon(router: router, screen: .homepage, width: geometry.size.width/3, height: geometry.size.height/20, systemIconName: "house", tabName: "Map")
-
+                    
                     ZStack {
                         Circle()
                             .foregroundColor(.white)
