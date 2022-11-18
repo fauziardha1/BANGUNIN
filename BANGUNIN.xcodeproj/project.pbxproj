@@ -18,6 +18,7 @@
 		290754B32926902100918ABC /* AddNewViewPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290754B22926902100918ABC /* AddNewViewPage2.swift */; };
 		290754B629274E1C00918ABC /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290754B529274E1C00918ABC /* CustomColor.swift */; };
 		290754B82927552200918ABC /* CustomDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290754B72927552200918ABC /* CustomDropDown.swift */; };
+		290754BA2927676700918ABC /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290754B92927676600918ABC /* CustomSlider.swift */; };
 		2998CB0028EA537D00A01B04 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2998CAFF28EA537D00A01B04 /* Home.swift */; };
 		BE08D0722920D4EC00511C10 /* AlarmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE08D0712920D4EC00511C10 /* AlarmList.swift */; };
 		BE08D0742924967400511C10 /* customTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE08D0732924967400511C10 /* customTabBar.swift */; };
@@ -39,6 +40,7 @@
 		290754B22926902100918ABC /* AddNewViewPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewPage2.swift; sourceTree = "<group>"; };
 		290754B529274E1C00918ABC /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		290754B72927552200918ABC /* CustomDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropDown.swift; sourceTree = "<group>"; };
+		290754B92927676600918ABC /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		2998CAFF28EA537D00A01B04 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		BE08D0712920D4EC00511C10 /* AlarmList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmList.swift; sourceTree = "<group>"; };
 		BE08D0732924967400511C10 /* customTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTabBar.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				290754B22926902100918ABC /* AddNewViewPage2.swift */,
 				290754B529274E1C00918ABC /* CustomColor.swift */,
 				290754B72927552200918ABC /* CustomDropDown.swift */,
+				290754B92927676600918ABC /* CustomSlider.swift */,
 			);
 			path = NewAlarm;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				055D863628E6E8C800D0D76B /* MapPage.swift in Sources */,
 				290754B629274E1C00918ABC /* CustomColor.swift in Sources */,
 				055D862F28E6E76B00D0D76B /* MainView.swift in Sources */,
+				290754BA2927676700918ABC /* CustomSlider.swift in Sources */,
 				0516DFCD28E1BD83004DEA93 /* BANGUNINApp.swift in Sources */,
 				BE08D0762925DCCF00511C10 /* AddNewView.swift in Sources */,
 				2998CB0028EA537D00A01B04 /* Home.swift in Sources */,
