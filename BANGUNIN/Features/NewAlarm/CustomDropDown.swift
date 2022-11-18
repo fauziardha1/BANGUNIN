@@ -10,8 +10,8 @@ import SwiftUI
 struct CustomDropDown: View {
     @State var expand = false
     
-    @State var defaultSound = "Choose Sound"
     let alarmSound : [String] = ["ringtone one", "ringtone two", "ringtone three"]
+    @State var defaultSound = "Choose Sound"
     
     var body: some View {
         VStack (alignment: .leading, content: {

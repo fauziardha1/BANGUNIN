@@ -73,7 +73,7 @@ struct AddNewView: View {
             
                 Spacer()
                 
-                NavigationLink(destination: AddNewViewPage2()) {
+                NavigationLink(destination: AddNewViewPage2().navigationBarBackButtonHidden(true)) {
                     
                     Text("Next")
                         .fontWeight(.bold)
