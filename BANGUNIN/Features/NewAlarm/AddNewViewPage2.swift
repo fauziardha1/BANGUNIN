@@ -12,7 +12,7 @@ struct AddNewViewPage2: View {
     @State private var alarmName: String = ""
     @State private var selectedColor: Color = .accentColor
     
-    @State private var selectedSound: String = "Choose Sound"
+//    @State private var selectedSound: String = "Hello"
     
     @State var pick: String = ""
     
@@ -40,7 +40,7 @@ struct AddNewViewPage2: View {
                     Text("Vibration")
                         .font(.callout)
                         .bold()
-                    CustomDropDown()
+                    CustomSlider()
                 }
                 
                 VStack(alignment: .leading) {
@@ -51,22 +51,34 @@ struct AddNewViewPage2: View {
                 }
 
                 Spacer()
+
+                Button(action: {
+                    self.num = 2
+                    
+                } , label: {
+                    Text("Save")
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("bg"))
+                        .padding(.vertical, 17)
+                        .padding(.horizontal, 150)
+                        .background(Color("primary"))
+                        .clipShape(RoundedRectangle(cornerRadius: 25))
+                    
+                }).padding(.top)
                 
-//                NavigationLink(destination: AddNewViewPage2()) {
-                    Button(action: {
-                        self.num = 2
-                        
-                    } , label: {
-                        Text("Next")
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("bg"))
-                            .padding(.vertical, 17)
-                            .padding(.horizontal, 150)
-                            .background(Color("primary"))
-                            .clipShape(RoundedRectangle(cornerRadius: 25))
-                        
-                    }).padding(.top)
-//                }
+                Button(action: {
+                    self.num = 2
+                    
+                } , label: {
+                    Text("Back")
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.black)
+                        .padding(.vertical, 17)
+                        .padding(.horizontal, 150)
+                        .background(Color("bg"))
+                        .clipShape(RoundedRectangle(cornerRadius: 25))
+                    
+                })
                 
                 
 //                Text(String(num))
