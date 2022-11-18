@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct AddNewViewPage2: View {
-    
     @State var num = 2
     @State private var alarmName: String = ""
+    @State private var selectedColor: Color = .accentColor
     
-    let radius: [String] = ["Blue", "Green", "Orange", "Red", "Purple", "Pink"]
+    @State private var selectedSound: String = "Choose Sound"
     
     @State var pick: String = ""
     
@@ -25,55 +25,34 @@ struct AddNewViewPage2: View {
                         .font(.callout)
                         .bold()
                     
-                    HStack {
-                        ForEach(radius, id: \.self) { rad in
-                            VStack(spacing: 10) {
-                                Text(rad)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color("primary"))
-                                
-                            }
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 10)
-                            .background(Color(("bg")))
-                            .clipShape(RoundedRectangle(cornerRadius: 25))
-                            .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color("primary")))
-    
-                            .onTapGesture {
-                                withAnimation {
-                                    pick = rad
-                                }
-                            }
-                        }
-                    }
-//                    Text("radius: \(pick)")
+                    CustomColor(selectedColor: $selectedColor)
+//                    Text("\(selectedColor.description)")
                 }
                 
                 VStack(alignment: .leading) {
                     Text("Alert Sound")
                         .font(.callout)
                         .bold()
-                    TextField("Name the alarm", text: $alarmName)
-                        .padding(20)
-                        .frame(maxHeight: 50)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.gray))
+                    CustomDropDown()
                 }
-            
+                
+                VStack(alignment: .leading) {
+                    Text("Vibration")
+                        .font(.callout)
+                        .bold()
+                    CustomDropDown()
+                }
+                
                 VStack(alignment: .leading) {
                     Text("Repeat")
                         .font(.callout)
                         .bold()
-                    TextField("Name the alarm", text: $alarmName)
-                        .padding(20)
-                        .frame(maxHeight: 50)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.gray))
+                    CustomDropDown()
                 }
 
                 Spacer()
                 
-                NavigationLink(destination: AddNewViewPage2()) {
+//                NavigationLink(destination: AddNewViewPage2()) {
                     Button(action: {
                         self.num = 2
                         
@@ -87,7 +66,7 @@ struct AddNewViewPage2: View {
                             .clipShape(RoundedRectangle(cornerRadius: 25))
                         
                     }).padding(.top)
-                }
+//                }
                 
                 
 //                Text(String(num))

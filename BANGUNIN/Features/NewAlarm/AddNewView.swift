@@ -45,6 +45,8 @@ struct AddNewView: View {
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 10)
                             .background(Color(("bg")))
+                            .opacity(rad == pick ? 2.0 : 0.5)
+                            .scaleEffect(rad == pick ? 1.1 : 1.0)
                             .clipShape(RoundedRectangle(cornerRadius: 25))
                             .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color("primary")))
     
@@ -71,7 +73,7 @@ struct AddNewView: View {
             
                 Spacer()
                 
-                NavigationLink(destination: AddNewViewPage2()) {
+//                NavigationLink(destination: AddNewViewPage2()) {
                     Button(action: {
                         self.num = 2
                         
@@ -85,7 +87,7 @@ struct AddNewView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 25))
                         
                     }).padding(.top)
-                }
+//                }
                 
                 
 //                Text(String(num))
