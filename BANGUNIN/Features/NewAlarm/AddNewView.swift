@@ -73,21 +73,16 @@ struct AddNewView: View {
             
                 Spacer()
                 
-//                NavigationLink(destination: AddNewViewPage2()) {
-                    Button(action: {
-                        self.num = 2
-                        
-                    } , label: {
-                        Text("Next")
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("bg"))
-                            .padding(.vertical, 17)
-                            .padding(.horizontal, 150)
-                            .background(Color("primary"))
-                            .clipShape(RoundedRectangle(cornerRadius: 25))
-                        
-                    }).padding(.top)
-//                }
+                NavigationLink(destination: AddNewViewPage2()) {
+                    
+                    Text("Next")
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("bg"))
+                        .padding(.vertical, 17)
+                        .padding(.horizontal, 150)
+                        .background(Color("primary"))
+                        .clipShape(RoundedRectangle(cornerRadius: 25))
+                }
                 
                 
 //                Text(String(num))
