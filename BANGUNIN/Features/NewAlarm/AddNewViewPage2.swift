@@ -66,10 +66,8 @@ struct AddNewViewPage2: View {
                     
                 }).padding(.top)
                 
-                Button(action: {
-                    self.num = 2
+                NavigationLink(destination: AddNewView().navigationBarBackButtonHidden(true)) {
                     
-                } , label: {
                     Text("Back")
                         .fontWeight(.bold)
                         .foregroundColor(Color.black)
@@ -77,8 +75,8 @@ struct AddNewViewPage2: View {
                         .padding(.horizontal, 150)
                         .background(Color("bg"))
                         .clipShape(RoundedRectangle(cornerRadius: 25))
-                    
-                })
+                }
+
                 
                 
 //                Text(String(num))
