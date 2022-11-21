@@ -12,8 +12,6 @@ struct AddNewViewPage2: View {
     @State private var alarmName: String = ""
     @State private var selectedColor: Color = .accentColor
     
-//    @State private var selectedSound: String = "Hello"
-    
     @State var pick: String = ""
     
     var body: some View {
