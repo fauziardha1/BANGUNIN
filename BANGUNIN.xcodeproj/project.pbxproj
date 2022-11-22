@@ -25,6 +25,7 @@
 		BE08D0742924967400511C10 /* customTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE08D0732924967400511C10 /* customTabBar.swift */; };
 		BE08D0762925DCCF00511C10 /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE08D0752925DCCF00511C10 /* AddNewView.swift */; };
 		BE4C44AB28F7DC45001AF7A7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4C44AA28F7DC45001AF7A7 /* LocationManager.swift */; };
+		BE4EAE88292CA6A400EADDC5 /* dataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4EAE87292CA6A400EADDC5 /* dataModel.swift */; };
 		BEB5DF3E28F53B7100C39331 /* SearchFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5DF3928EEBF7900C39331 /* SearchFeature.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		BE08D0732924967400511C10 /* customTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTabBar.swift; sourceTree = "<group>"; };
 		BE08D0752925DCCF00511C10 /* AddNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
 		BE4C44AA28F7DC45001AF7A7 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BE4EAE87292CA6A400EADDC5 /* dataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModel.swift; sourceTree = "<group>"; };
 		BEB5DF3928EEBF7900C39331 /* SearchFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				055D863028E6E86E00D0D76B /* Features */,
 				0516DFD028E1BD87004DEA93 /* Assets.xcassets */,
 				0516DFD228E1BD87004DEA93 /* Preview Content */,
+				BE4EAE87292CA6A400EADDC5 /* dataModel.swift */,
 			);
 			path = BANGUNIN;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				055D863A28E6E8F900D0D76B /* MapModel.swift in Sources */,
 				055D863628E6E8C800D0D76B /* MapPage.swift in Sources */,
 				290754B629274E1C00918ABC /* CustomColor.swift in Sources */,
+				BE4EAE88292CA6A400EADDC5 /* dataModel.swift in Sources */,
 				055D862F28E6E76B00D0D76B /* MainView.swift in Sources */,
 				290754BA2927676700918ABC /* CustomSlider.swift in Sources */,
 				0516DFCD28E1BD83004DEA93 /* BANGUNINApp.swift in Sources */,

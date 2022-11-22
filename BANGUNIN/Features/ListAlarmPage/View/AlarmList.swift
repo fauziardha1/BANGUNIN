@@ -28,14 +28,44 @@ struct AlarmList: View {
     }
 }
 
-struct rounded: View{
+struct Alarm : Hashable{
+    var imageUrl : String
+    var name : String
+}
+
+struct AlarmView: View {
+    var list : [Alarm] = [Alarm(imageUrl: "stasiun_bdg", name: "Stasiun Cisauk"), Alarm(imageUrl: "stasiun_gambir", name: "Stasiun Kebayoran"), Alarm(imageUrl: "monas", name: "Stasiun Bandung")]
+    
     var body: some View {
-        RoundedRectangle(cornerRadius: 25, style: .continuous)
-            .fill(.green)
-            .frame(width: 80, height: 50)
-            .padding(.leading)
+        NavigationView {
+            List{
+                ForEach(list, id: \.self){ place in
+                    HStack{
+                        CreateList(label: place.name, image: place.imageUrl)
+                    }
+                    .swipeActions{
+                        Button{
+                            print("delete")
+                        } label: {
+                            Label("", systemImage: "trash.fill")
+                        }
+                        .tint(.red)
+                    }
+                    .swipeActions(edge: .leading, allowsFullSwipe: false){
+                        Button{
+                            print("edit")
+                        } label: {
+                            Label("", systemImage: "pencil")
+                        }
+                        .tint(.orange)
+                    }
+                }
+            }
+            
+        }
     }
 }
+
 
 struct roundedView: View {
     let categories: [String] = ["All", "Jakarta", "Bandung", "medan"]
@@ -81,52 +111,38 @@ struct buttonGenerator: View {
 struct CreateList: View {
     var label: String
     var image: String
-//    var images = [Image("monas") ,Image("stasiun_bdg"),Image("stasiun_gambir")]
     
     var body: some View {
         ZStack (alignment: .center) {
-            RoundedRectangle(cornerRadius: 20.0)
-                .fill(Color.white)
-                .shadow(radius: 1)
-                .frame(height: 100)
             HStack{
                 Image(image)
                     .resizable()
                     .frame(width: 70, height: 70)
                     .cornerRadius(10)
                     .padding(.all, 10)
-                Text(label)
-                    .font(.title3)
-                    .padding(.all, 15)
+                VStack(alignment: .leading){
+                    Text(label)
+                        .font(.title3)
+                    Text("notify in 500 m")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                }
                 Spacer()
                 buttonGenerator(name: "bell.fill", color: .green)
                     .padding()
             }
         }
-        .padding(.trailing, 15)
-        .padding(.leading, 15)
+//        .padding(.trailing, 15)
+//        .padding(.leading, 15)
     }
 }
-struct Alarm : Hashable{
-    var imageUrl : String
-    var name : String
-}
 
-struct AlarmView: View {
-    var list : [Alarm] = [Alarm(imageUrl: "stasiun_bdg", name: "Stasiun Rawabuntu"), Alarm(imageUrl: "stasiun_gambir", name: "tasiun Kebayoran"), Alarm(imageUrl: "monas", name: "stasiun Kebayoran")]
-    
+struct rounded: View{
     var body: some View {
-        VStack{
-            ForEach(list, id: \.self){ place in
-                HStack{
-                    CreateList(label: place.name, image: place.imageUrl)
-                }
-            }
-            .padding(.top, 10)
-            .padding(.leading, 20)
-            .padding(.trailing, 20)
-            .padding(.bottom, 10)
-        }
+        RoundedRectangle(cornerRadius: 25, style: .continuous)
+            .fill(.green)
+            .frame(width: 80, height: 50)
+            .padding(.leading)
     }
 }
 
@@ -137,22 +153,7 @@ struct AlarmList_Previews: PreviewProvider {
 }
 
 
-
-// ["\(Image("monas"))" ,"\(Image("stasiun_bdg"))","\(Image("stasiun_gambir"))"]
-
-//
-//struct ImageGenerator: View {
-//    var image = [images]
-//    var body: some View{
-//            Image(image)
-//                .resizable()
-//                .frame(width: 20, height: 20)
-//                .cornerRadius(10)
-//    }
-//}
-
-    //                ForEach(images, id: \.self){ image in
-    //                    ImageGenerator(image: image)
-    //                }
-
-//    var list : [Alarm] = [Alarm(imageUrl: "\(UIImage(imageLiteralResourceName: 'stasiun_bdg')"), name: "Stasiun Rawabuntu"), Alarm(imageUrl: UIImage(imageLiteralResourceName: "stasiun_gambir"), name: "tasiun Kebayoran")]
+//            RoundedRectangle(cornerRadius: 20.0)
+//                .fill(Color.white)
+//                .shadow(radius: 1)
+//                .frame(height: 100)
