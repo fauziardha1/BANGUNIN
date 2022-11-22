@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddNewView: View {
+    @Environment(\.dismiss) var dismiss
     @State var num = 1
     @State private var alarmName: String = ""
     
@@ -110,7 +111,7 @@ struct AddNewView: View {
                                     .offset(y: -geometry.size.height/340/2)
                                     .rotationEffect(Angle(degrees: 45))
                                     .onTapGesture{
-                                        condition = true
+                                        dismiss()
                                     }
                                 }
                                 Text("Stasiun Gambir")
@@ -121,9 +122,9 @@ struct AddNewView: View {
 
                         }
                     }
-                //                .background(Color("bg"))
             }
-        }.navigate(to: customTabBar(router: TabRouter()), when: $condition)
+        }
+        .navigate(to: customTabBar(router: TabRouter()), when: $condition)
         
     }
 }

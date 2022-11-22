@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddNewViewPage2: View {
+    @Environment(\.dismiss) var dismiss
     @State var num = 2
     @State private var alarmName: String = ""
     @State private var selectedColor: Color = .accentColor
@@ -64,8 +65,6 @@ struct AddNewViewPage2: View {
                     
                 }).padding(.top)
                 
-                NavigationLink(destination: AddNewView().navigationBarBackButtonHidden(true)) {
-                    
                     Text("Back")
                         .fontWeight(.bold)
                         .foregroundColor(Color.black)
@@ -73,8 +72,9 @@ struct AddNewViewPage2: View {
                         .padding(.horizontal, 150)
                         .background(Color("bg"))
                         .clipShape(RoundedRectangle(cornerRadius: 25))
-                }
-
+                        .onTapGesture {
+                            dismiss()
+                        }
                 
                 
 //                Text(String(num))
