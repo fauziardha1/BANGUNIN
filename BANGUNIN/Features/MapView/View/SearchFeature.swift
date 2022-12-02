@@ -12,6 +12,7 @@ import SwiftUI
 
 struct SearchBar: View {
     @State private var searchText = ""
+    var color: Color
 
     var body: some View {
         VStack {
@@ -24,11 +25,11 @@ struct SearchBar: View {
                         
                 }
                 .frame(height: 57)
-                .background(.white)
+                .background(color)
                 .cornerRadius(32)
                 .padding(.horizontal)
             
-            Spacer()
+//            Spacer()
         }
             
     }
@@ -37,6 +38,6 @@ struct SearchBar: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar()
+        SearchBar(color: .white)
     }
 }

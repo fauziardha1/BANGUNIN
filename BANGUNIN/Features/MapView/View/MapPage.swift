@@ -54,7 +54,10 @@ struct MapPage: View {
             }
             
             // search bar
-            SearchBar()
+            VStack {
+                SearchBar(color: .white)
+                Spacer()
+            }
             
             // button current location
             VStack {
