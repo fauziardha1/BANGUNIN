@@ -28,13 +28,13 @@ struct AlarmList: View {
     }
 }
 
-struct Alarm : Hashable{
+struct AlarmGenerator : Hashable{
     var imageUrl : String
     var name : String
 }
 
 struct AlarmView: View {
-    var list : [Alarm] = [Alarm(imageUrl: "stasiun_bdg", name: "Stasiun Cisauk"), Alarm(imageUrl: "stasiun_gambir", name: "Stasiun Kebayoran"), Alarm(imageUrl: "monas", name: "Stasiun Bandung")]
+    var list : [AlarmGenerator] = [AlarmGenerator(imageUrl: "stasiun_bdg", name: "Stasiun Cisauk"), AlarmGenerator(imageUrl: "stasiun_gambir", name: "Stasiun Kebayoran"), AlarmGenerator(imageUrl: "monas", name: "Stasiun Bandung")]
     
     var body: some View {
         NavigationView {

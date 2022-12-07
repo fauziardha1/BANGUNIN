@@ -21,7 +21,7 @@ struct customTabBar: View {
                 case .listpage:
                     AlarmList()
                 case .addAlarmPage:
-                    AddNewView()
+                    AddNewView(coreDM: CoreDataManager())
                 }
                 
                 HStack {
@@ -47,7 +47,7 @@ struct customTabBar: View {
                 }.frame(width: geometry.size.width, height: geometry.size.height/8)
                     .background(Color("bg").shadow(radius: 2))
             } .edgesIgnoringSafeArea(.bottom)
-        }.navigate(to: AddNewView(), when: $condition)
+        }.navigate(to: AddNewView(coreDM: CoreDataManager()), when: $condition)
     }
 }
 

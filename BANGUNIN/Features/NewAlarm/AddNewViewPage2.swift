@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct AddNewViewPage2: View {
+    
+    let coreDM: CoreDataManager
+    @State public var alarms: [DataAlarm] = [DataAlarm]()
+    
+    let data: UserData
+    
     @Environment(\.dismiss) var dismiss
     @State var num = 2
-    @State private var alarmName: String = ""
-    @State private var selectedColor: Color = .accentColor
+//    @State private var name: String = ""
+    @State private var selectedColor: String = ("biru")
     
     @State var pick: String = ""
     
@@ -25,7 +31,6 @@ struct AddNewViewPage2: View {
                         .bold()
                     
                     CustomColor(selectedColor: $selectedColor)
-//                    Text("\(selectedColor.description)")
                 }
                 
                 VStack(alignment: .leading) {
@@ -53,7 +58,7 @@ struct AddNewViewPage2: View {
 
                 Button(action: {
                     self.num = 2
-                    
+                    coreDM.saveAlarm(name: data.name, radius: data.radius, color: selectedColor)
                 } , label: {
                     Text("Save")
                         .fontWeight(.bold)
@@ -75,12 +80,8 @@ struct AddNewViewPage2: View {
                         .onTapGesture {
                             dismiss()
                         }
-                
-                
-//                Text(String(num))
             }.navigationTitle("Stasiun Gambir")
                 .padding()
-//                .background(Color("bg"))
         }
         
     }
@@ -89,6 +90,6 @@ struct AddNewViewPage2: View {
 
 struct AddNewViewPage2_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewViewPage2()
+        AddNewViewPage2(coreDM: CoreDataManager(), data: UserData(name: "", radius:""))
     }
 }

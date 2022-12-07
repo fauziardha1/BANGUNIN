@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct CustomColor: View {
-    @Binding var selectedColor: Color
-    let alarmColors: [Color] = [.blue, .green, .orange, .yellow]
+    @Binding var selectedColor: String
+    let alarmColors: [String] = ["biru","merah","kuning","hijau"]
     
     var body: some View {
         HStack {
             ForEach(alarmColors, id: \.self) { alarmcolor in
 //                VStack(spacing: 10) {
                     RoundedRectangle(cornerRadius: 25)
-                        .foregroundColor(alarmcolor)
+                        .foregroundColor(Color(alarmcolor))
                         .frame(width: 70, height: 45)
                         .opacity(alarmcolor == selectedColor ? 1.0 : 0.5)
                         .scaleEffect(alarmcolor == selectedColor ? 1.1 : 1.0)
@@ -37,6 +37,6 @@ struct CustomColor: View {
 
 struct CustomColor_Previews: PreviewProvider {
     static var previews: some View {
-        CustomColor(selectedColor: .constant(.blue))
+        CustomColor(selectedColor: .constant("blue"))
     }
 }
