@@ -10,35 +10,34 @@ import CoreData
 import SwiftUI
 
 class CoreDataManager {
-    let persistentContainer: NSPersistentContainer
-    
-    init() {
-        persistentContainer = NSPersistentContainer(name: "Model")
-        persistentContainer.loadPersistentStores { (description, error) in
-            if let error = error {
-                fatalError("Core Data Store failed \(error.localizedDescription)")
-            }
-        }
-    }
+    private static var persistentContainer: NSPersistentContainer = {
+                let container = NSPersistentContainer(name: "Model")
+                container.loadPersistentStores { description, error in
+                    if let error = error {
+                         fatalError("Unable to load persistent stores: (error)")
+                    }
+                }
+                return container
+            }()
     
     func updateAlarm() {
 
         do {
-            try persistentContainer.viewContext.save()
+            try CoreDataManager.persistentContainer.viewContext.save()
         } catch {
-            persistentContainer.viewContext.rollback()
+            CoreDataManager.persistentContainer.viewContext.rollback()
         }
 
     }
     //
     func deleteAlarm(alarm: DataAlarm) {
 
-        persistentContainer.viewContext.delete(alarm)
+        CoreDataManager.persistentContainer.viewContext.delete(alarm)
 
         do {
-            try persistentContainer.viewContext.save()
+            try CoreDataManager.persistentContainer.viewContext.save()
         } catch {
-            persistentContainer.viewContext.rollback()
+            CoreDataManager.persistentContainer.viewContext.rollback()
             print("Failed to save context \(error)")
         }
 
@@ -49,22 +48,25 @@ class CoreDataManager {
         let fetchRequest: NSFetchRequest<DataAlarm> = DataAlarm.fetchRequest()
 
         do {
-            return try persistentContainer.viewContext.fetch(fetchRequest)
+            return try CoreDataManager.persistentContainer.viewContext.fetch(fetchRequest)
         } catch {
             return []
         }
 
     }
     
-    func saveAlarm(name: String, radius: String, color: String) {
+    func saveAlarm(name: String, radius: String, color: String, alert: String, repeatsound: String, vibration: Float) {
         
-        let alarm = DataAlarm()
+        let alarm = DataAlarm(context: CoreDataManager.persistentContainer.viewContext)
         alarm.name = name
         alarm.radius = radius
         alarm.color = color
+        alarm.alert = alert
+        alarm.repeatsound = repeatsound
+        alarm.vibration = vibration
         
         do {
-            try persistentContainer.viewContext.save()
+            try CoreDataManager.persistentContainer.viewContext.save()
         } catch {
             print("Failed to save alarm \(error)")
         }

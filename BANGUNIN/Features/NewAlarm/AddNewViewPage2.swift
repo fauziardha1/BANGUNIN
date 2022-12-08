@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddNewViewPage2: View {
     
+    @StateObject var savedata = DataSave()
+    
     let coreDM: CoreDataManager
     @State public var alarms: [DataAlarm] = [DataAlarm]()
     
@@ -16,7 +18,6 @@ struct AddNewViewPage2: View {
     
     @Environment(\.dismiss) var dismiss
     @State var num = 2
-//    @State private var name: String = ""
     @State private var selectedColor: String = ("biru")
     
     @State var pick: String = ""
@@ -37,28 +38,35 @@ struct AddNewViewPage2: View {
                     Text("Alert Sound")
                         .font(.callout)
                         .bold()
-                    CustomDropDown()
+                    CustomDropDown(flag: 0, sound: savedata)
                 }
                 
                 VStack(alignment: .leading) {
                     Text("Vibration")
                         .font(.callout)
                         .bold()
-                    CustomSlider()
+                    CustomSlider(vibrationname: savedata)
                 }
                 
                 VStack(alignment: .leading) {
                     Text("Repeat")
                         .font(.callout)
                         .bold()
-                    CustomDropDown()
+                    CustomDropDown(flag: 1, sound: savedata)
                 }
 
                 Spacer()
 
                 Button(action: {
+                    print(data.radius)
+                    print(data.name)
+                    print(selectedColor)
+                    print(savedata.AlertSound)
+                    print(savedata.RepeatSound)
+                    print(savedata.Vibration)
                     self.num = 2
-                    coreDM.saveAlarm(name: data.name, radius: data.radius, color: selectedColor)
+                    coreDM.saveAlarm(name: data.name, radius: data.radius, color: selectedColor, alert: savedata.AlertSound, repeatsound: savedata.RepeatSound, vibration: savedata.Vibration)
+                    
                 } , label: {
                     Text("Save")
                         .fontWeight(.bold)

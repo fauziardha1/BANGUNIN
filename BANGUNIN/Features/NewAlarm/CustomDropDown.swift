@@ -10,6 +10,9 @@ import SwiftUI
 struct CustomDropDown: View {
     @State var expand = false
     
+    var flag = 0
+    @ObservedObject var sound: DataSave
+    
     let alarmSound : [String] = ["ringtone one", "ringtone two", "ringtone three"]
     @State var defaultSound = "Choose Sound"
     
@@ -33,7 +36,13 @@ struct CustomDropDown: View {
                 
                 ForEach(alarmSound, id: \.self) { alarmsound in
                     Button(action: {
-                        defaultSound = alarmsound
+                        if flag == 0{
+                            sound.AlertSound = alarmsound
+                        }
+                        else {
+                            sound.RepeatSound = alarmsound
+                        }
+//                        defaultSound = alarmsound
                         self.expand.toggle()
                     }) {
                         
@@ -63,7 +72,7 @@ struct CustomDropDown: View {
 
 struct CustomDropDown_Previews: PreviewProvider {
     static var previews: some View {
-        CustomDropDown()
+        CustomDropDown(sound: DataSave())
     }
 }
 
