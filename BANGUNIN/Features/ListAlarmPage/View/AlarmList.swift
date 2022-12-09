@@ -18,7 +18,7 @@ struct AlarmList: View {
                         .fontWeight(.semibold)
                         .padding(.leading, 35)
                     roundedView()
-                    AlarmView()
+                    AlarmView(coreDM: CoreDataManager())
                         .background(Color("bg"))
                     Spacer()
                 }
@@ -34,14 +34,21 @@ struct AlarmGenerator : Hashable{
 }
 
 struct AlarmView: View {
-    var list : [AlarmGenerator] = [AlarmGenerator(imageUrl: "stasiun_bdg", name: "Stasiun Cisauk"), AlarmGenerator(imageUrl: "stasiun_gambir", name: "Stasiun Kebayoran"), AlarmGenerator(imageUrl: "monas", name: "Stasiun Bandung")]
+    @State private var alarms: [DataAlarm] = [DataAlarm]()
+    let coreDM: CoreDataManager
+    
+    private func allAlarms(){
+        alarms = coreDM.getAllAlarms()
+    }
+    
+//    var list : [AlarmGenerator] = [AlarmGenerator(imageUrl: "stasiun_bdg", name: "Stasiun Cisauk"), AlarmGenerator(imageUrl: "stasiun_gambir", name: "Stasiun Kebayoran"), AlarmGenerator(imageUrl: "monas", name: "Stasiun Bandung")]
     
     var body: some View {
         NavigationView {
             List{
-                ForEach(list, id: \.self){ place in
+                ForEach(alarms, id: \.self){ alarm in
                     HStack{
-                        CreateList(label: place.name, image: place.imageUrl)
+                        CreateList(label: alarm.name ?? "" , image: "stasiun_bdg", rad: alarm.radius ?? "")
                     }
                     .swipeActions{
                         Button{
@@ -61,6 +68,9 @@ struct AlarmView: View {
                     }
                 }
             }
+            .onAppear(perform: {
+                allAlarms()
+            })
             
         }
     }
@@ -111,6 +121,7 @@ struct buttonGenerator: View {
 struct CreateList: View {
     var label: String
     var image: String
+    var rad: String
     
     var body: some View {
         ZStack (alignment: .center) {
@@ -123,7 +134,7 @@ struct CreateList: View {
                 VStack(alignment: .leading){
                     Text(label)
                         .font(.title3)
-                    Text("notify in 500 m")
+                    Text("notify in \(rad) m")
                         .font(.caption2)
                         .foregroundColor(.secondary)
                 }
