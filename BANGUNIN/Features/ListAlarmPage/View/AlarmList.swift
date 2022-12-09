@@ -41,8 +41,6 @@ struct AlarmView: View {
         alarms = coreDM.getAllAlarms()
     }
     
-//    var list : [AlarmGenerator] = [AlarmGenerator(imageUrl: "stasiun_bdg", name: "Stasiun Cisauk"), AlarmGenerator(imageUrl: "stasiun_gambir", name: "Stasiun Kebayoran"), AlarmGenerator(imageUrl: "monas", name: "Stasiun Bandung")]
-    
     var body: some View {
         NavigationView {
             List{
@@ -50,14 +48,14 @@ struct AlarmView: View {
                     HStack{
                         CreateList(label: alarm.name ?? "" , image: "stasiun_bdg", rad: alarm.radius ?? "")
                     }
-                    .swipeActions{
-                        Button{
-                            print("delete")
-                        } label: {
-                            Label("", systemImage: "trash.fill")
-                        }
-                        .tint(.red)
-                    }
+//                    .swipeActions{
+//                        Button{
+//                            print("delete")
+//                        } label: {
+//                            Label("", systemImage: "trash.fill")
+//                        }
+//                        .tint(.red)
+//                    }
                     .swipeActions(edge: .leading, allowsFullSwipe: false){
                         Button{
                             print("edit")
@@ -66,7 +64,13 @@ struct AlarmView: View {
                         }
                         .tint(.orange)
                     }
-                }
+                }.onDelete(perform: {
+                    IndexSet in IndexSet.forEach{ index in
+                        let alarm = alarms[index]
+                        coreDM.deleteAlarm(alarm: alarm)
+                        allAlarms()
+                    }
+                })
             }
             .onAppear(perform: {
                 allAlarms()
@@ -168,3 +172,6 @@ struct AlarmList_Previews: PreviewProvider {
 //                .fill(Color.white)
 //                .shadow(radius: 1)
 //                .frame(height: 100)
+
+
+//    var list : [AlarmGenerator] = [AlarmGenerator(imageUrl: "stasiun_bdg", name: "Stasiun Cisauk"), AlarmGenerator(imageUrl: "stasiun_gambir", name: "Stasiun Kebayoran"), AlarmGenerator(imageUrl: "monas", name: "Stasiun Bandung")]

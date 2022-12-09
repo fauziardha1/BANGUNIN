@@ -14,10 +14,6 @@ struct AddNewViewPage2: View {
     let coreDM: CoreDataManager
     @State public var alarms: [DataAlarm] = [DataAlarm]()
     
-    private func allAlarms(){
-        alarms = coreDM.getAllAlarms()
-    }
-    
     let data: UserData
     
     @Environment(\.dismiss) var dismiss
@@ -70,7 +66,6 @@ struct AddNewViewPage2: View {
                     print(savedata.Vibration)
                     self.num = 2
                     coreDM.saveAlarm(name: data.name, radius: data.radius, color: selectedColor, alert: savedata.AlertSound, repeatsound: savedata.RepeatSound, vibration: savedata.Vibration)
-                   allAlarms()
                     
                 } , label: {
                     Text("Save")
