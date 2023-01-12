@@ -9,13 +9,14 @@ import SwiftUI
 
 struct CustomSlider: View {
     
-    @State var currentVibration = 5.0
+//    @State var currentVibration = 5.0
+    @ObservedObject var vibrationname: DataSave
     
     var body: some View {
         VStack {
             HStack {
                 
-                Slider(value: $currentVibration, in: 0.0 ... 10.0)
+                Slider(value: $vibrationname.Vibration, in: 0.0 ... 10.0)
                     .frame(width: 300)
                     .accentColor(Color("primary"))
                     .padding()
@@ -27,6 +28,6 @@ struct CustomSlider: View {
 
 struct CustomSlider_Previews: PreviewProvider {
     static var previews: some View {
-        CustomSlider()
+        CustomSlider(vibrationname: DataSave())
     }
 }

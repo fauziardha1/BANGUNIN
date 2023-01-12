@@ -24,8 +24,10 @@
 		BE08D0722920D4EC00511C10 /* AlarmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE08D0712920D4EC00511C10 /* AlarmList.swift */; };
 		BE08D0742924967400511C10 /* customTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE08D0732924967400511C10 /* customTabBar.swift */; };
 		BE08D0762925DCCF00511C10 /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE08D0752925DCCF00511C10 /* AddNewView.swift */; };
+		BE302D8D2941998D00299781 /* ObservedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE302D8C2941998D00299781 /* ObservedObject.swift */; };
 		BE4C44AB28F7DC45001AF7A7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4C44AA28F7DC45001AF7A7 /* LocationManager.swift */; };
 		BE4EAE88292CA6A400EADDC5 /* dataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4EAE87292CA6A400EADDC5 /* dataModel.swift */; };
+		BE5F5DB929360CCC00751A69 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE4EAE89292DDD3000EADDC5 /* Model.xcdatamodeld */; };
 		BEB5DF3E28F53B7100C39331 /* SearchFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5DF3928EEBF7900C39331 /* SearchFeature.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +50,10 @@
 		BE08D0712920D4EC00511C10 /* AlarmList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmList.swift; sourceTree = "<group>"; };
 		BE08D0732924967400511C10 /* customTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTabBar.swift; sourceTree = "<group>"; };
 		BE08D0752925DCCF00511C10 /* AddNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
+		BE302D8C2941998D00299781 /* ObservedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservedObject.swift; sourceTree = "<group>"; };
 		BE4C44AA28F7DC45001AF7A7 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BE4EAE87292CA6A400EADDC5 /* dataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModel.swift; sourceTree = "<group>"; };
+		BE4EAE8A292DDD3000EADDC5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		BEB5DF3928EEBF7900C39331 /* SearchFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +92,7 @@
 				0516DFD028E1BD87004DEA93 /* Assets.xcassets */,
 				0516DFD228E1BD87004DEA93 /* Preview Content */,
 				BE4EAE87292CA6A400EADDC5 /* dataModel.swift */,
+				BE4EAE89292DDD3000EADDC5 /* Model.xcdatamodeld */,
 			);
 			path = BANGUNIN;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				290754B529274E1C00918ABC /* CustomColor.swift */,
 				290754B72927552200918ABC /* CustomDropDown.swift */,
 				290754B92927676600918ABC /* CustomSlider.swift */,
+				BE302D8C2941998D00299781 /* ObservedObject.swift */,
 			);
 			path = NewAlarm;
 			sourceTree = "<group>";
@@ -257,6 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE302D8D2941998D00299781 /* ObservedObject.swift in Sources */,
+				BE5F5DB929360CCC00751A69 /* Model.xcdatamodeld in Sources */,
 				290754BC29278BF900918ABC /* TabBarRouter.swift in Sources */,
 				055D863828E6E8EC00D0D76B /* MapPageViewModel.swift in Sources */,
 				BE08D0722920D4EC00511C10 /* AlarmList.swift in Sources */,
@@ -403,7 +411,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BANGUNIN/Preview Content\"";
-				DEVELOPMENT_TEAM = XLX6KD3AF8;
+				DEVELOPMENT_TEAM = N7U85GFNYG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -415,8 +423,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fauziarda.com.BANGUNIN;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fauziarda.BANGUNIN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -432,7 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BANGUNIN/Preview Content\"";
-				DEVELOPMENT_TEAM = XLX6KD3AF8;
+				DEVELOPMENT_TEAM = N7U85GFNYG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -444,8 +452,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fauziarda.com.BANGUNIN;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fauziarda.BANGUNIN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -475,6 +483,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BE4EAE89292DDD3000EADDC5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BE4EAE8A292DDD3000EADDC5 /* Model.xcdatamodel */,
+			);
+			currentVersion = BE4EAE8A292DDD3000EADDC5 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0516DFC128E1BD83004DEA93 /* Project object */;
 }

@@ -18,7 +18,7 @@ struct AlarmList: View {
                         .fontWeight(.semibold)
                         .padding(.leading, 35)
                     roundedView()
-                    AlarmView()
+                    AlarmView(coreDM: CoreDataManager())
                         .background(Color("bg"))
                     Spacer()
                 }
@@ -28,29 +28,34 @@ struct AlarmList: View {
     }
 }
 
-struct Alarm : Hashable{
+struct AlarmGenerator : Hashable{
     var imageUrl : String
     var name : String
 }
 
 struct AlarmView: View {
-    var list : [Alarm] = [Alarm(imageUrl: "stasiun_bdg", name: "Stasiun Cisauk"), Alarm(imageUrl: "stasiun_gambir", name: "Stasiun Kebayoran"), Alarm(imageUrl: "monas", name: "Stasiun Bandung")]
+    @State private var alarms: [DataAlarm] = [DataAlarm]()
+    let coreDM: CoreDataManager
+    
+    private func allAlarms(){
+        alarms = coreDM.getAllAlarms()
+    }
     
     var body: some View {
         NavigationView {
             List{
-                ForEach(list, id: \.self){ place in
+                ForEach(alarms, id: \.self){ alarm in
                     HStack{
-                        CreateList(label: place.name, image: place.imageUrl)
+                        CreateList(label: alarm.name ?? "" , image: "stasiun_bdg", rad: alarm.radius ?? "")
                     }
-                    .swipeActions{
-                        Button{
-                            print("delete")
-                        } label: {
-                            Label("", systemImage: "trash.fill")
-                        }
-                        .tint(.red)
-                    }
+//                    .swipeActions{
+//                        Button{
+//                            print("delete")
+//                        } label: {
+//                            Label("", systemImage: "trash.fill")
+//                        }
+//                        .tint(.red)
+//                    }
                     .swipeActions(edge: .leading, allowsFullSwipe: false){
                         Button{
                             print("edit")
@@ -59,8 +64,17 @@ struct AlarmView: View {
                         }
                         .tint(.orange)
                     }
-                }
+                }.onDelete(perform: {
+                    IndexSet in IndexSet.forEach{ index in
+                        let alarm = alarms[index]
+                        coreDM.deleteAlarm(alarm: alarm)
+                        allAlarms()
+                    }
+                })
             }
+            .onAppear(perform: {
+                allAlarms()
+            })
             
         }
     }
@@ -111,6 +125,7 @@ struct buttonGenerator: View {
 struct CreateList: View {
     var label: String
     var image: String
+    var rad: String
     
     var body: some View {
         ZStack (alignment: .center) {
@@ -123,7 +138,7 @@ struct CreateList: View {
                 VStack(alignment: .leading){
                     Text(label)
                         .font(.title3)
-                    Text("notify in 500 m")
+                    Text("notify in \(rad) m")
                         .font(.caption2)
                         .foregroundColor(.secondary)
                 }
@@ -157,3 +172,6 @@ struct AlarmList_Previews: PreviewProvider {
 //                .fill(Color.white)
 //                .shadow(radius: 1)
 //                .frame(height: 100)
+
+
+//    var list : [AlarmGenerator] = [AlarmGenerator(imageUrl: "stasiun_bdg", name: "Stasiun Cisauk"), AlarmGenerator(imageUrl: "stasiun_gambir", name: "Stasiun Kebayoran"), AlarmGenerator(imageUrl: "monas", name: "Stasiun Bandung")]

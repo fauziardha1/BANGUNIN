@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct AddNewViewPage2: View {
+    
+    @StateObject var savedata = DataSave()
+    
+    let coreDM: CoreDataManager
+    @State public var alarms: [DataAlarm] = [DataAlarm]()
+    
+    let data: UserData
+    
     @Environment(\.dismiss) var dismiss
     @State var num = 2
-    @State private var alarmName: String = ""
-    @State private var selectedColor: Color = .accentColor
+    @State private var selectedColor: String = ("biru")
     
     @State var pick: String = ""
     
@@ -25,34 +32,40 @@ struct AddNewViewPage2: View {
                         .bold()
                     
                     CustomColor(selectedColor: $selectedColor)
-//                    Text("\(selectedColor.description)")
                 }
                 
                 VStack(alignment: .leading) {
                     Text("Alert Sound")
                         .font(.callout)
                         .bold()
-                    CustomDropDown()
+                    CustomDropDown(flag: 0, sound: savedata)
                 }
                 
                 VStack(alignment: .leading) {
                     Text("Vibration")
                         .font(.callout)
                         .bold()
-                    CustomSlider()
+                    CustomSlider(vibrationname: savedata)
                 }
                 
                 VStack(alignment: .leading) {
                     Text("Repeat")
                         .font(.callout)
                         .bold()
-                    CustomDropDown()
+                    CustomDropDown(flag: 1, sound: savedata)
                 }
 
                 Spacer()
 
                 Button(action: {
+                    print(data.radius)
+                    print(data.name)
+                    print(selectedColor)
+                    print(savedata.AlertSound)
+                    print(savedata.RepeatSound)
+                    print(savedata.Vibration)
                     self.num = 2
+                    coreDM.saveAlarm(name: data.name, radius: data.radius, color: selectedColor, alert: savedata.AlertSound, repeatsound: savedata.RepeatSound, vibration: savedata.Vibration)
                     
                 } , label: {
                     Text("Save")
@@ -75,12 +88,8 @@ struct AddNewViewPage2: View {
                         .onTapGesture {
                             dismiss()
                         }
-                
-                
-//                Text(String(num))
             }.navigationTitle("Stasiun Gambir")
                 .padding()
-//                .background(Color("bg"))
         }
         
     }
@@ -89,6 +98,6 @@ struct AddNewViewPage2: View {
 
 struct AddNewViewPage2_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewViewPage2()
+        AddNewViewPage2(coreDM: CoreDataManager(), data: UserData(name: "", radius:""))
     }
 }
