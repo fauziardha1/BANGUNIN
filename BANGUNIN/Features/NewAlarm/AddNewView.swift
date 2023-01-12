@@ -15,7 +15,7 @@ struct AddNewView: View {
     @Environment(\.dismiss) var dismiss
     
     @State var num = 1
-    @State private var name: String = ""
+    @State private var alarmName: String = "name"
     
     let radius: [String] = ["300", "500", "700", "900"]
     
