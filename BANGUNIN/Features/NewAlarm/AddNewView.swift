@@ -73,7 +73,7 @@ struct AddNewView: View {
                         Text("Alarm name")
                             .font(.callout)
                             .bold()
-                        TextField("Name the alarm", text: $name)
+                        TextField("Name the alarm", text: $alarmName)
                             .padding(20)
                             .frame(maxHeight: 50)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -82,7 +82,7 @@ struct AddNewView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: AddNewViewPage2(coreDM: CoreDataManager(), data: UserData(name: name, radius: pickRadius)).navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination: AddNewViewPage2(coreDM: CoreDataManager(), data: UserData(name: alarmName, radius: pickRadius)).navigationBarBackButtonHidden(true)) {
                         
                         Text("Next")
                             .fontWeight(.bold)
