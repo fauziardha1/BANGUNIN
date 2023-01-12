@@ -19,8 +19,10 @@ struct AddNewViewPage2: View {
     @Environment(\.dismiss) var dismiss
     @State var num = 2
     @State private var selectedColor: String = ("biru")
-    
     @State var pick: String = ""
+    @State var isPresentAlert = false
+    @State var isGoBackHome = false
+    @State private var router = TabRouter()
     
     var body: some View {
         NavigationView {
@@ -65,7 +67,17 @@ struct AddNewViewPage2: View {
                     print(savedata.RepeatSound)
                     print(savedata.Vibration)
                     self.num = 2
-                    coreDM.saveAlarm(name: data.name, radius: data.radius, color: selectedColor, alert: savedata.AlertSound, repeatsound: savedata.RepeatSound, vibration: savedata.Vibration)
+//                    coreDM.saveAlarm(name: data.name, radius: data.radius, color: selectedColor, alert: savedata.AlertSound, repeatsound: savedata.RepeatSound, vibration: savedata.Vibration)
+                    
+                    coreDM.saveAnAlarm(name: data.name, radius: data.radius, color: selectedColor, alert: savedata.AlertSound, repeatsound: savedata.RepeatSound, vibration: savedata.Vibration) { status in
+                        
+                        print(" showing alert")
+                        isPresentAlert = true
+                        
+                    } onFailure: { error in
+                        print("showing error")
+                    }
+
                     
                 } , label: {
                     Text("Save")
@@ -91,6 +103,17 @@ struct AddNewViewPage2: View {
             }.navigationTitle("Stasiun Gambir")
                 .padding()
         }
+        .alert(
+            title: "Alarm Created",
+            message: "Your alarm has been created!\nSit back and we’ll wake you up\nwhen you get close",
+            alertStatus: AlertStatus.success,
+            dismissButton: CustomAlertButton(title: "Back to Home", action: {
+                self.isGoBackHome = true
+                router.screen = .listpage
+            }),
+            isPresented:  $isPresentAlert
+        )
+        .navigate(to: customTabBar(router: router), when: self.$isGoBackHome)
         
     }
 

@@ -73,4 +73,27 @@ class CoreDataManager {
         
     }
     
+    // save alarm with success status
+    func saveAnAlarm(name: String, radius: String, color: String, alert: String, repeatsound: String, vibration: Float,  completion : (Bool) -> Void, onFailure : ( Error) -> Void){
+        
+        let context = CoreDataManager.persistentContainer.viewContext
+        let newAlarm = DataAlarm(context: context)
+        newAlarm.name = name
+        newAlarm.radius = radius
+        newAlarm.color = color
+        newAlarm.alert = alert
+        newAlarm.repeatsound = repeatsound
+        newAlarm.vibration = vibration
+        
+        do {
+            try context.save()
+            
+            completion(true)
+        } catch {
+            onFailure(error)
+        }
+        
+        
+    }
+    
 }
