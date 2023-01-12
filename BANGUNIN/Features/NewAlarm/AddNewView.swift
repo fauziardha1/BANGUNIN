@@ -10,7 +10,7 @@ import SwiftUI
 struct AddNewView: View {
     @Environment(\.dismiss) var dismiss
     @State var num = 1
-    @State private var alarmName: String = ""
+    @State private var alarmName: String = "name"
     
     let radius: [String] = ["300", "500", "700", "900"]
     
