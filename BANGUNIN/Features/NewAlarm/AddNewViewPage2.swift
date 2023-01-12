@@ -21,6 +21,7 @@ struct AddNewViewPage2: View {
     @State private var selectedColor: String = ("biru")
     @State var pick: String = ""
     @State var isPresentAlert = false
+    @State var isGoBackHome = false
     
     var body: some View {
         NavigationView {
@@ -101,7 +102,16 @@ struct AddNewViewPage2: View {
             }.navigationTitle("Stasiun Gambir")
                 .padding()
         }
-        .alert(title: "Alarm Created", message: "Your alarm has been created!\nSit back and we’ll wake you up\nwhen you get close", alertStatus: AlertStatus.success, dismissButton: CustomAlertButton(title: "Back to Home"), isPresented:  $isPresentAlert)
+        .alert(
+            title: "Alarm Created",
+            message: "Your alarm has been created!\nSit back and we’ll wake you up\nwhen you get close",
+            alertStatus: AlertStatus.success,
+            dismissButton: CustomAlertButton(title: "Back to Home", action: {
+                self.isGoBackHome = true
+            }),
+            isPresented:  $isPresentAlert
+        )
+        .navigate(to: customTabBar(router: TabRouter()), when: self.$isGoBackHome)
         
     }
 

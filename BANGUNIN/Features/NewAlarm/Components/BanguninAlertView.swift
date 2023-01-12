@@ -11,6 +11,7 @@ enum AlertStatus {
     case failed
     case deleted
     case confirmToDelete
+    case edited
 }
 struct BanguninAlertView: View {
     
@@ -73,6 +74,10 @@ struct BanguninAlertView: View {
                 text = "🥺"
             } else if self.alertStatus == AlertStatus.deleted{
                 text = "🫠"
+            } else if self.alertStatus == AlertStatus.edited{
+                text = "🫡"
+            } else {
+               text = "🧐"
             }
             
             return text
@@ -167,8 +172,10 @@ struct BanguninAlertView: View {
 
     private var dimView: some View {
         Color.gray
+            .opacity(0.8)
+            .opacity(backgroundOpacity)
             .ignoresSafeArea()
-            .opacity(0.1)
+            .background(BackgroundClearView())
     }
 
 
@@ -220,3 +227,16 @@ struct CustomAlert_Previews: PreviewProvider {
     }
 }
 #endif
+
+
+struct BackgroundClearView: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView()
+        DispatchQueue.main.async {
+            view.superview?.superview?.backgroundColor = .clear
+        }
+        return view
+    }
+
+    func updateUIView(_ uiView: UIView, context: Context) {}
+}
