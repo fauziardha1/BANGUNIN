@@ -22,6 +22,7 @@ struct AddNewViewPage2: View {
     @State var pick: String = ""
     @State var isPresentAlert = false
     @State var isGoBackHome = false
+    @State private var router = TabRouter()
     
     var body: some View {
         NavigationView {
@@ -108,10 +109,11 @@ struct AddNewViewPage2: View {
             alertStatus: AlertStatus.success,
             dismissButton: CustomAlertButton(title: "Back to Home", action: {
                 self.isGoBackHome = true
+                router.screen = .listpage
             }),
             isPresented:  $isPresentAlert
         )
-        .navigate(to: customTabBar(router: TabRouter()), when: self.$isGoBackHome)
+        .navigate(to: customTabBar(router: router), when: self.$isGoBackHome)
         
     }
 
