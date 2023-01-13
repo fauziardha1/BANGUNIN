@@ -55,7 +55,35 @@ struct MapPage: View {
             
             // search bar
             VStack {
-                SearchBar(color: .white)
+                SearchBar(locationManager: self.locationManager, color: .white)
+                
+                if let places =  self.locationManager.fetchedPlaces, !places.isEmpty{
+                    List {
+                        ForEach(places, id: \.self){
+                            place in
+                            HStack(spacing: 15){
+                                Image(systemName: "mappin.circle.fill")
+                                    .font(.title2)
+                                    .foregroundColor(.gray)
+                                
+                                VStack(alignment: .leading, spacing: 6) {
+                                    Text(place.name ?? "")
+                                        .font(.title3.bold())
+                                    
+                                    Text(place.locality ?? "")
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                            
+                            
+                        }
+                    }
+                    .cornerRadius(12)
+                    .padding(.horizontal)
+                    .listStyle(.plain)
+                    
+                }
                 Spacer()
             }
             
@@ -65,8 +93,8 @@ struct MapPage: View {
                 HStack {
                     Spacer()
                     Button {
-                        let latitude = locationManager.lastLocation?.coordinate.latitude ?? 0
-                        let longitude = locationManager.lastLocation?.coordinate.longitude ?? 0
+                        let latitude = locationManager.lastLocation?.coordinate.latitude ?? -6.211275294338611 // jakarta
+                        let longitude = locationManager.lastLocation?.coordinate.longitude ?? 106.8391278109003 // jakarta
                         
                         vm.updateLocation(latitude, longitude)
                     }

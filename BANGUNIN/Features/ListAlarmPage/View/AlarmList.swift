@@ -136,7 +136,7 @@ struct roundedView: View {
 struct searchComponent: View {
     var  body: some View{
         HStack{
-            SearchBar(color: Color("bg"))
+            SearchBar(locationManager: LocationManager() , color: Color("bg"))
                 .padding()
             buttonGenerator(name: "doc.text.magnifyingglass", color: Color("icon"))
                 .padding(.trailing, 50)

@@ -7,12 +7,20 @@
 
 import Foundation
 import CoreLocation
+import MapKit
+
+// MARK: Combine to watch textfield
+import Combine
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     private let locationManager = CLLocationManager()
     @Published var locationStatus: CLAuthorizationStatus?
     @Published var lastLocation: CLLocation?
+    @Published var fetchedPlaces = [CLPlacemark]()
+    @Published var searchText : String = ""
+    
+    var cancelable : AnyCancellable?
 
     override init() {
         super.init()
@@ -20,6 +28,17 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        
+        cancelable =  $searchText
+            .debounce(for: .milliseconds(500), scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .sink(receiveValue: { value in
+                self.fetchPlacesFromKeyword(key: value)
+                if value.isEmpty {
+                    self.fetchedPlaces = [CLPlacemark]()
+                }
+            })
     }
 
    
@@ -48,5 +67,24 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         lastLocation = location
         print(#function, location)
+    }
+    
+    
+    // fetch places
+    func fetchPlacesFromKeyword(key : String)  {
+        Task{
+            do {
+                let request = MKLocalSearch.Request()
+                request.naturalLanguageQuery = key.lowercased()
+                
+                let response = try await MKLocalSearch(request: request).start()
+                
+                await MainActor.run(body: {
+                    self.fetchedPlaces = response.mapItems.compactMap({ item -> CLPlacemark? in
+                        return item.placemark
+                    })
+                })
+            }
+        }
     }
 }
