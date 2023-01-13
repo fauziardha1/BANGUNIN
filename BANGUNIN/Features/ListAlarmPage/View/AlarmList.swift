@@ -80,22 +80,56 @@ struct AlarmView: View {
     }
 }
 
+struct FilterData :  Hashable {
+    let city : String
+    var isActive : Bool
+}
+
 
 struct roundedView: View {
-    let categories: [String] = ["All", "Jakarta", "Bandung", "medan"]
+    var categories: [FilterData] = [
+        FilterData(city: "All", isActive: true),
+        FilterData(city: "Jakarta", isActive: false),
+        FilterData(city: "Bandung", isActive: false),
+        FilterData(city: "Malang", isActive: false)
+    ]
     
     var body: some View {
-        ScrollView {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(categories, id: \.self) { category in
-                    ZStack{
-                        rounded()
-                        Text(category.description.capitalized)
-                            .padding(.leading)
-                    }
+                    BanguninButton(category.city, isActive: category.isActive)
                 }
             }
+            .padding(.vertical, 6)
+            .padding(.horizontal,32)
+            
         }
+        
+    }
+    
+    @ViewBuilder
+    func BanguninButton(_ title : String, isActive : Bool) -> some View {
+        
+        let color = isActive ? Color(uiColor: UIColor(red: 0.12, green: 0.80, blue: 0.47, alpha: 1.00)) : Color(uiColor: UIColor(red: 0.96, green: 0.96, blue: 0.97, alpha: 1.00))
+        
+        Button(title) {
+            for var category in self.categories {
+                if category.city == title {
+                    category.isActive = true
+                }else{
+                    category.isActive = false
+                }
+            }
+            
+        }
+        .foregroundColor(isActive ? .white : Color(uiColor: UIColor(red: 0.62, green: 0.65, blue: 0.75, alpha: 1.00)))
+        .font(.system(size: 18, weight: .medium))
+        .padding()
+        .background(color)
+        .cornerRadius(.infinity)
+        .shadow(radius: 1)
+        .padding(.trailing)
     }
 }
 
@@ -147,8 +181,6 @@ struct CreateList: View {
                     .padding()
             }
         }
-//        .padding(.trailing, 15)
-//        .padding(.leading, 15)
     }
 }
 
@@ -166,12 +198,3 @@ struct AlarmList_Previews: PreviewProvider {
         AlarmList()
     }
 }
-
-
-//            RoundedRectangle(cornerRadius: 20.0)
-//                .fill(Color.white)
-//                .shadow(radius: 1)
-//                .frame(height: 100)
-
-
-//    var list : [AlarmGenerator] = [AlarmGenerator(imageUrl: "stasiun_bdg", name: "Stasiun Cisauk"), AlarmGenerator(imageUrl: "stasiun_gambir", name: "Stasiun Kebayoran"), AlarmGenerator(imageUrl: "monas", name: "Stasiun Bandung")]
