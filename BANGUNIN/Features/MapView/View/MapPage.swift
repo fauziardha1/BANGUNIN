@@ -79,9 +79,12 @@ struct MapPage: View {
                             
                         }
                     }
+                    .frame(maxHeight: 60 * CGFloat(places.count) )
+                    .background(Color.gray.opacity(0.5))
                     .cornerRadius(12)
                     .padding(.horizontal)
                     .listStyle(.plain)
+                    .scrollDismissesKeyboard(.immediately)
                     
                 }
                 Spacer()
