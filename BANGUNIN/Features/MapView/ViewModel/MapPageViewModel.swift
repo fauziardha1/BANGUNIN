@@ -42,5 +42,10 @@ extension MapPage {
             
             locations.append(Location(name: "current", latitude: lat, longitude: long))
         }
+        
+        // update mapregion
+        func setMapRegion(_ newValue : MKCoordinateRegion)  {
+            self.mapRegion = newValue
+        }
     }
 }

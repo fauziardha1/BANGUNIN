@@ -18,6 +18,7 @@
 		056CB9A7297031C5005019AF /* BanguninAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056CB9A6297031C5005019AF /* BanguninAlertView.swift */; };
 		056CB9A9297032DB005019AF /* AlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056CB9A8297032DB005019AF /* AlertButton.swift */; };
 		056CB9AB2970331A005019AF /* AlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056CB9AA2970331A005019AF /* AlertModifier.swift */; };
+		05DDB7F42972BCFF006C319B /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DDB7F32972BCFF006C319B /* ViewExtensions.swift */; };
 		290754B32926902100918ABC /* AddNewViewPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290754B22926902100918ABC /* AddNewViewPage2.swift */; };
 		290754B629274E1C00918ABC /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290754B529274E1C00918ABC /* CustomColor.swift */; };
 		290754B82927552200918ABC /* CustomDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290754B72927552200918ABC /* CustomDropDown.swift */; };
@@ -46,6 +47,7 @@
 		056CB9A6297031C5005019AF /* BanguninAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanguninAlertView.swift; sourceTree = "<group>"; };
 		056CB9A8297032DB005019AF /* AlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButton.swift; sourceTree = "<group>"; };
 		056CB9AA2970331A005019AF /* AlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModifier.swift; sourceTree = "<group>"; };
+		05DDB7F32972BCFF006C319B /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		290754B22926902100918ABC /* AddNewViewPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewPage2.swift; sourceTree = "<group>"; };
 		290754B529274E1C00918ABC /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		290754B72927552200918ABC /* CustomDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropDown.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				0516DFCC28E1BD83004DEA93 /* BANGUNINApp.swift */,
 				055D863028E6E86E00D0D76B /* Features */,
+				05DDB7F22972BCCD006C319B /* Utils */,
 				0516DFD028E1BD87004DEA93 /* Assets.xcassets */,
 				0516DFD228E1BD87004DEA93 /* Preview Content */,
 				BE4EAE87292CA6A400EADDC5 /* dataModel.swift */,
@@ -182,6 +185,14 @@
 				056CB9AA2970331A005019AF /* AlertModifier.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		05DDB7F22972BCCD006C319B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				05DDB7F32972BCFF006C319B /* ViewExtensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		BE08D0B729262F0900511C10 /* CustomTabBar */ = {
@@ -293,6 +304,7 @@
 				290754B629274E1C00918ABC /* CustomColor.swift in Sources */,
 				056CB9A9297032DB005019AF /* AlertButton.swift in Sources */,
 				BE4EAE88292CA6A400EADDC5 /* dataModel.swift in Sources */,
+				05DDB7F42972BCFF006C319B /* ViewExtensions.swift in Sources */,
 				056CB9A7297031C5005019AF /* BanguninAlertView.swift in Sources */,
 				055D862F28E6E76B00D0D76B /* MainView.swift in Sources */,
 				290754BA2927676700918ABC /* CustomSlider.swift in Sources */,

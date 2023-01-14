@@ -9,21 +9,20 @@ import SwiftUI
 import MapKit
 
 struct MapPage: View {
-
-    
     @StateObject private var vm = MapPageViewModel()
     @StateObject private var locationManager = LocationManager()
-    
-    
     
     var body: some View {
         ZStack {
             // map view
             VStack {
                 NavigationView {
-                    Map(coordinateRegion: $vm.mapRegion, annotationItems: vm.locations){
-                        location in
+                    Map(coordinateRegion: Binding(get: {
+                        self.vm.mapRegion
+                    }, set: { newValue, _ in
+                        self.vm.setMapRegion(newValue)
                         
+                    }), annotationItems: vm.locations){ location in
                         location.name == "current"
                         ? MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)) {
                             
@@ -50,6 +49,9 @@ struct MapPage: View {
                         }
                     }
                     .ignoresSafeArea(.container, edges: .top)
+                    .onTapGesture {
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    }
                 }
             }
             
