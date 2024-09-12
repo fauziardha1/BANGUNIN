@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct BANGUNINApp: App {
+    
+    @StateObject var router = TabRouter()
+    
     var body: some Scene {
+//        
         WindowGroup {
-            ContentView()
+            customTabBar(router: TabRouter())
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  BANGUNIN
 //
 //  Created by FauziArda on 26/09/22.
@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
+    var status = false
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -19,8 +20,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }
